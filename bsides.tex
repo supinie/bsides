@@ -232,13 +232,17 @@ onlytextwidth, % Typeset content in columns at text width
     \frametitle{It's all SVP?}
 
     \begin{columns}[T] % [T] ensures correct vertical alignment
-        \begin{column}{0.48\linewidth} % Left column
-            \includegraphics[width=\linewidth]{always_has_been.jpg} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
-            {\tiny\textcolor{ICLBlue}{(Above) Regev discovering the the LWE to $\gamma$-SVP reduction, 2005}}
-            {\tiny\textcolor{ICLBlue}{(Right) }}
+        \begin{column}{0.58\linewidth} % Left column
+            \includegraphics[width=0.9\linewidth]{always_has_been.jpg} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
+
+            \vspace{-1.5em}{\tiny\textcolor{ICLBlue}{(Above) Regev discovering the the LWE to $\gamma$-SVP reduction, 2005}}\newline
+
+            \vspace{-2em}But don't worry, even though all of these problems are reducible to SVP, they all work in slightly different ways, giving the schemes we build from them different properties (speed, key size, etc.) We also believe that SVP is a \textit{very} hard problem, even for quantum computers.
         \end{column}
-        \begin{column}{0.48\linewidth} % Right column
-            \includegraphics[width=0.75\linewidth]{svp_crutch.jpeg} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
+        \begin{column}{0.38\linewidth} % Right column
+            \includegraphics[width=0.85\linewidth]{svp_crutch.jpeg} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
+
+            \vspace{-1.5em}{\tiny\textcolor{ICLBlue}{(Above) xkcd Dependency, lattice based cryptography special edition}}
         \end{column}
     \end{columns}
 \end{frame}
