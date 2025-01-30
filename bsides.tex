@@ -198,7 +198,18 @@ onlytextwidth, % Typeset content in columns at text width
             \]
         \end{tcolorbox}
 
-        \Huge{TODO: diagrams}
+        \vspace{-0.5em}
+        \begin{columns}[T] % [T] ensures correct vertical alignment
+            \begin{column}{0.3\linewidth} % Left column
+                \includegraphics[width=\linewidth]{zn_trivial_basis.jpeg}
+            \end{column}
+            \begin{column}{0.3\linewidth} % Center column
+                \includegraphics[width=\linewidth]{zn_nontrivial_basis.jpeg}
+            \end{column}
+            \begin{column}{0.3\linewidth} % Right column
+                \includegraphics[width=\linewidth]{Figure_1.jpeg}
+            \end{column}
+        \end{columns}
     \end{adjustwidth}
 \end{frame}
 
@@ -224,6 +235,21 @@ onlytextwidth, % Typeset content in columns at text width
         But we also have the Short Integer Solutions problem (SIS), the NTRU problem, the Closest Vector Problem (CVP), and all the many variants of anything mentioned here!
 
     \end{adjustwidth}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+    \frametitle{Shortest/Closest Vector Problem}
+    \begin{columns}[T] % [T] ensures correct vertical alignment
+        \begin{column}{0.48\linewidth} % Left column
+            \includegraphics[width=\linewidth]{good_basis_svp.jpeg} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
+        \end{column}
+        \begin{column}{0.48\linewidth} % Right column
+            \includegraphics[width=\linewidth]{bad_basis_svp.jpeg} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
+            {\tiny\textcolor{ICLBlue}{(Above) Cryptographers wanting new toys, circa 2000 (colourised)}}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 %------------------------------------------------
