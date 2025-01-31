@@ -376,7 +376,7 @@ onlytextwidth, % Typeset content in columns at text width
         \begin{column}{0.42\linewidth} % Left column
             \textbf{ML-KEM/Kyber and ML-DSA/Dilithium}\\
             
-            ML-KEM/DSA were both elected by NIST as schemes for standardisation, with the standards published August 2024\footfullcite{mlkem}\footfullcite{mldsa}. These are both front runners due to their speed, however their drawback is a fairly large key size. LWE is a well studied assumption, with strong worst and average case analysis.
+            ML-KEM\footfullcite{mlkem}/DSA\footfullcite{mldsa} were both elected by NIST as schemes for standardisation, with the standards published August 2024. These are both front runners due to their speed, however their drawback is a fairly large key size. LWE is a well studied assumption, with strong worst and average case analysis.
         \end{column}
         \begin{column}{0.55\linewidth} % Right column
             \textbf{Where Can I Find This?}\\
@@ -412,6 +412,28 @@ onlytextwidth, % Typeset content in columns at text width
         \end{column}
     \end{columns}
 \end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+    \frametitle{Some Schemes You May Have Heard Of}
+    \framesubtitle{LIP Based}
+
+    \begin{columns}[T] % [T] ensures correct vertical alignment
+        \begin{column}{0.58\linewidth} % Left column
+            \textbf{HAWK}\\
+            
+            Hawk\footfullcite{hawk} is the youngest of all schemes listed, and is currently the only lattice based scheme left in NISTs call for additional signature schemes\footfullcite{nistsig}. HAWKs biggest selling points are smaller keys and signatures compared to other signature schemes whilst maintaining the speed of lattices.
+        \end{column}
+        \begin{column}{0.4\linewidth} % Right column
+            \textbf{Where Can I Find This?}\\
+            \begin{itemize}
+                \item No where I could find yet...
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
 
 %------------------------------------------------
 
