@@ -247,10 +247,70 @@ onlytextwidth, % Typeset content in columns at text width
         \end{column}
         \begin{column}{0.48\linewidth} % Right column
             \includegraphics[width=\linewidth]{bad_basis_svp.jpeg} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
-            {\tiny\textcolor{ICLBlue}{(Above) Cryptographers wanting new toys, circa 2000 (colourised)}}
         \end{column}
     \end{columns}
 \end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+    \frametitle{Learning With Errors}
+    \begin{columns}[T] % [T] ensures correct vertical alignment
+        \begin{column}{0.48\linewidth} % Left column
+            \begin{tcolorbox}[colback=ICLBlue!5!white,colframe=ICLBlue,title=Learning With Errors Problem (LWE)]
+                \[
+                    \color{ForestGreen} \begin{bmatrix} \\ \mathbf{b} \\ \\ \end{bmatrix} \color{black} = \color{ForestGreen} \begin{bmatrix} & & \\ & \mathbf{A} & \\ & & \end{bmatrix} \color{red} \begin{bmatrix} \\  \mathbf{s} \\ \\ \end{bmatrix} \color{black} + \begin{bmatrix} \\ \mathbf{e} \\ \\ \end{bmatrix}
+                \]
+            \end{tcolorbox}
+
+            We can construct what is called a $q$-ary lattice using $\mathbf{A}$.
+
+            Then, taking the target vector $\mathbf{b}$, solving a CVP instance \textit{should} give us $\mathbf{As}$, and therefore $\mathbf{s}$.
+
+            Unfortunately, if the LWE parameters are chosen well, we do not get a good basis for our new lattice, and so solving CVP is hard.
+        \end{column}
+        \begin{column}{0.48\linewidth} % Right column
+            \includegraphics[width=\linewidth]{lwe_lattice.jpeg} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+    \frametitle{Learning With Errors}
+    \begin{columns}[T] % [T] ensures correct vertical alignment
+        \begin{column}{0.48\linewidth} % Left column
+            \begin{tcolorbox}[colback=ICLBlue!5!white,colframe=ICLBlue,title=Learning With Errors Problem (LWE)]
+                \[
+                    \color{ForestGreen} \begin{bmatrix} \\ \mathbf{b} \\ \\ \end{bmatrix} \color{black} = \color{ForestGreen} \begin{bmatrix} & & \\ & \mathbf{A} & \\ & & \end{bmatrix} \color{red} \begin{bmatrix} \\  \mathbf{s} \\ \\ \end{bmatrix} \color{black} + \begin{bmatrix} \\ \mathbf{e} \\ \\ \end{bmatrix}
+                \]
+            \end{tcolorbox}
+
+            With a good basis for our lattice, something that can be kept secret, solving CVP and recovering the secret is easy, however.
+
+            In practice, we have methods of turning a bad basis into a good basis (\textit{lattice reduction}), but these algorithms do not scale well for high dimension lattices.
+        \end{column}
+        \begin{column}{0.48\linewidth} % Right column
+            \includegraphics[width=\linewidth]{lwe_lattice_solved.png} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+    \frametitle{Lattice Isomorphism Problem}
+    \begin{columns}[T] % [T] ensures correct vertical alignment
+        \begin{column}{0.48\linewidth} % Left column
+            \includegraphics[width=\linewidth]{lip_instance.jpeg} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
+        \end{column}
+        \begin{column}{0.48\linewidth} % Right column
+            \includegraphics[width=\linewidth]{lip_instance_alt.jpeg} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
+        \end{column}
+    \end{columns}
+\end{frame}
+
 
 %------------------------------------------------
 
@@ -263,12 +323,92 @@ onlytextwidth, % Typeset content in columns at text width
 
             \vspace{-1.5em}{\tiny\textcolor{ICLBlue}{(Above) Regev discovering the the LWE to $\gamma$-SVP reduction, 2005}}\newline
 
-            \vspace{-2em}But don't worry, even though all of these problems are reducible to SVP, they all work in slightly different ways, giving the schemes we build from them different properties (speed, key size, etc.) We also believe that SVP is a \textit{very} hard problem, even for quantum computers.
+            \vspace{-2em}But don't worry, even though all of these problems are reducible to SVP, they all work in slightly different ways, giving the schemes we build from them different properties (speed, key size, etc.).
         \end{column}
         \begin{column}{0.38\linewidth} % Right column
             \includegraphics[width=0.85\linewidth]{svp_crutch.jpeg} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
 
             \vspace{-1.5em}{\tiny\textcolor{ICLBlue}{(Above) xkcd Dependency, lattice based cryptography special edition}}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+    \frametitle{What can we do with lattices?}
+
+    % Top-left quarter
+    \begin{minipage}[t][0.45\textheight][t]{0.48\linewidth}
+        \textbf{Fully Homomorphic Encryption}\\
+        FHE allows computations to be applied on encrypted data without needing to be decrypted first. This allows a user to allow a semi-trusted third party to operate on their data, without being able to access it, in such a way that when the user decrypts their data the same operations have been applied to the plaintext.
+    \end{minipage}%
+    \hfill
+    % Top-right quarter
+    \begin{minipage}[t][0.45\textheight][t]{0.48\linewidth}
+        \textbf{Cryptanalysis of Classical Schemes}\\
+        Lattices are also used by cryptographers when attacking classical schemes such as RSA and ECC. They typically exploit weaknesses in parameter generation and utilise the collection of many signed messages by a single key\footfullcite{classical}.
+    \end{minipage}
+    
+
+    \vspace{-1.5em}
+    % Bottom-left quarter
+    \begin{minipage}[t][0.45\textheight][t]{0.48\linewidth}
+        \textbf{Secure Multiparty Computation}\\
+        Similar to FHE, MPC is a privacy preserving construct in which a number of participants all want to compute a value as a public function of each of their private data. MPC allows them to do so whilst maintaining the secrecy of their inputs.
+    \end{minipage}
+    \hfill
+    % Bottom-right quarter
+    \begin{minipage}[t][0.2\textheight][t]{0.48\linewidth}
+        \vspace{3.5em}
+        \textbf{Post-Quantum Cryptography}\\
+        It is believed that these lattice problems are hard to solve even on quantum computers.
+    \end{minipage}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+    \frametitle{Some Schemes You May Have Heard Of}
+    \framesubtitle{LWE Based}
+
+    \begin{columns}[T] % [T] ensures correct vertical alignment
+        \begin{column}{0.42\linewidth} % Left column
+            \textbf{ML-KEM/Kyber and ML-DSA/Dilithium}\\
+            
+            ML-KEM/DSA were both elected by NIST as schemes for standardisation, with the standards published August 2024\footfullcite{mlkem}\footfullcite{mldsa}. These are both front runners due to their speed, however their drawback is a fairly large key size. LWE is a well studied assumption, with strong worst and average case analysis.
+        \end{column}
+        \begin{column}{0.55\linewidth} % Right column
+            \textbf{Where Can I Find This?}\\
+            \begin{itemize}
+                \item Cloudflare now support x25519xML-KEM in CIRCL\footnote{https://blog.cloudflare.com/post-quantum-to-origins/}
+            \item Chrome supports x25519xML-KEM as default for TLS\footnote{https://blog.chromium.org/2023/08/protecting-chrome-traffic-with-hybrid.html}
+                \item liboqs, the open-quantum-safe x Microsoft fork of openTLS supports ML-KEM and ML-DSA\footnote{https://github.com/open-quantum-safe/liboqs}
+                \item As of release 9.9, OpenSSH supports mlkem768x25519-sha256 by default\footnote{https://www.openssh.com/releasenotes.html}
+                \item Amazon supports ML-KEM in hybrid in AWS Key Management Service\footnote{https://aws.amazon.com/kms/}
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+    \frametitle{Some Schemes You May Have Heard Of}
+    \framesubtitle{NTRU Based}
+
+    \begin{columns}[T] % [T] ensures correct vertical alignment
+        \begin{column}{0.42\linewidth} % Left column
+            \textbf{Falcon and NTRUPrime}\\
+            
+            Falcon\footfullcite{falcon} was selected as a digital signature scheme by NIST, however is yet to be standardised. NTRUPrime\footfullcite{ntruprime} was not selected for standarisation by NIST, but is another popular key encapsulation scheme.
+        \end{column}
+        \begin{column}{0.55\linewidth} % Right column
+            \textbf{Where Can I Find This?}\\
+            \begin{itemize}
+                \item liboqs, the open-quantum-safe x Microsoft fork of openTLS supports Falcon and NTRUPrime\footnote{https://github.com/open-quantum-safe/liboqs}
+                \item As of release 9.9, OpenSSH supports sntrup761x25519-sha512 by default\footnote{https://www.openssh.com/releasenotes.html}
+            \end{itemize}
         \end{column}
     \end{columns}
 \end{frame}

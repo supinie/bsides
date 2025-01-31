@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
+from matplotlib.path import Path
 
 
 def plotLattice(ax, basis_vectors, ldown, rup, color, linewidth, alpha):
@@ -60,8 +61,8 @@ def plotLattice(ax, basis_vectors, ldown, rup, color, linewidth, alpha):
     # plot basis vectors
     # ax.quiver(0, 0, b1[0], b1[1], color='red', scale_units='xy', scale=1, alpha=1)
     # ax.quiver(0, 0, b2[0], b2[1], color='blue', scale_units='xy', scale=1, alpha=1)
-    ax.quiver(0, 0, b2[0] + b1[0], b2[1] + b1[1], color='red', scale_units='xy', scale=1, alpha=1)
-    ax.quiver(0, 0, 2 * b2[0] + b1[0], 2 * b2[1] + b1[1], color='blue', scale_units='xy', scale=1, alpha=1)
+    # ax.quiver(0, 0, b2[0] + b1[0], b2[1] + b1[1], color='red', scale_units='xy', scale=1, alpha=1)
+    # ax.quiver(0, 0, 2 * b2[0] + b1[0], 2 * b2[1] + b1[1], color='blue', scale_units='xy', scale=1, alpha=1)
 
 
     return points
@@ -69,25 +70,57 @@ def plotLattice(ax, basis_vectors, ldown, rup, color, linewidth, alpha):
 
 def plotParallelepipeds(ax, bad_basis_vectors, points, color, linewidth, alpha):
     b1, b2 = np.array(bad_basis_vectors[0]), np.array(bad_basis_vectors[1])
-    for p in points:
-        # Calculate the center offset
-        center_offset = (b1 + b2) / 2
-        # Define vertices for the parallelepiped centered on the lattice point
-        vertices = [p - center_offset, p - center_offset + b1, p - center_offset + b1 + b2, p - center_offset + b2]
-        parallelepiped = patches.Polygon(vertices, closed=True, fill=False, edgecolor=color, linewidth=linewidth, alpha=alpha)
-        ax.add_patch(parallelepiped)
+    ax.quiver(0, 0, b1[0], b1[1], color='red', scale_units='xy', scale=1, alpha=1)
+    ax.quiver(0, 0, b2[0], b2[1], color='blue', scale_units='xy', scale=1, alpha=1)
+
+    # Example new vectors (replace with your actual new vectors)
+    new_vec1 = np.array([3, -1])
+    new_vec2 = np.array([2, 3])
+
+    # Find lengths of the original vectors
+    length_b1 = np.linalg.norm(b1)
+    length_b2 = np.linalg.norm(b2)
+
+    # Normalize the new vectors (scale them to unit length)
+    new_vec1_normalized = new_vec1 / np.linalg.norm(new_vec1)
+    new_vec2_normalized = new_vec2 / np.linalg.norm(new_vec2)
+
+    # Scale the new vectors to have the same length as b1 and b2
+    new_vec1_scaled = new_vec1_normalized * length_b1
+    new_vec2_scaled = new_vec2_normalized * length_b2
+    ax.quiver(0, 0, new_vec1_scaled[0], new_vec1_scaled[1], color='red', scale_units='xy', scale=1, alpha=0.25)
+    ax.quiver(0, 0, new_vec2_scaled[0], new_vec2_scaled[1], color='blue', scale_units='xy', scale=1, alpha=0.25)
+    ax.quiver(0, 0, new_vec1[0], new_vec1[1], color='red', scale_units='xy', scale=1, alpha=0.25)
+    ax.quiver(0, 0, new_vec2[0], new_vec2[1], color='blue', scale_units='xy', scale=1, alpha=0.25)
+    # e = [-0.506185, -0.99403]
+    # ax.scatter(6 - e[0], 7 - e[1], color='green', linewidths=5, alpha=1)
+    # ax.scatter(6, 7, color='red', linewidths=5, alpha=1)
+    # for p in points:
+    #     # Calculate the center offset
+    #     center_offset = (b1 + b2) / 2
+    #     # Define vertices for the parallelepiped centered on the lattice point
+    #     vertices = [p - center_offset, p - center_offset + b1, p - center_offset + b1 + b2, p - center_offset + b2]
+    #     path = Path(vertices)
+    #     if path.contains_point(np.array([6 - e[0], 7 - e[1]])):
+    #         fill_color = 'yellow'
+    #         fill_alpha = 0.3
+    #     else:
+    #         fill_color = 'none'
+    #         fill_alpha = 0.3
+    #     parallelepiped = patches.Polygon(vertices, closed=True, fill=True, edgecolor=color, linewidth=linewidth, alpha=fill_alpha, facecolor=fill_color)
+    #     ax.add_patch(parallelepiped)
 
 
 if __name__ == '__main__':
     
     # Define original basis
-    b1 = np.array([3, -1])
-    b2 = np.array([2, 3])
+    b1 = np.array([-3.18068, -2.83395])
+    b2 = np.array([2.6236, -4.57916])
     basis_vectors = [b1, b2]
 
     # Define a "bad" basis
-    bad_b1 = b2 + b1
-    bad_b2 = 2 * b2 + b1
+    bad_b1 = np.array([5, 4])
+    bad_b2 = np.array([9, 5])
     bad_basis_vectors = [bad_b1, bad_b2]
 
     # define the plotting area
@@ -96,7 +129,7 @@ if __name__ == '__main__':
 
     fig, ax = plt.subplots()
     points = plotLattice(ax, basis_vectors, ldown, rup, 'blue', 3, 0.25)
-    plotParallelepipeds(ax, bad_basis_vectors, points, 'green', 1, 0.5)
+    plotParallelepipeds(ax, basis_vectors, points, 'green', 1, 0.25)
 
     # resize the plotting window
     mngr = plt.get_current_fig_manager()
