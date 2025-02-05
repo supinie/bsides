@@ -369,7 +369,7 @@ onlytextwidth, % Typeset content in columns at text width
 %------------------------------------------------
 
 \begin{frame}
-    \frametitle{Some Schemes You May Have Heard Of}
+    \frametitle{Some schemes you may have heard of}
     \framesubtitle{LWE Based}
 
     \begin{columns}[T] % [T] ensures correct vertical alignment
@@ -394,7 +394,7 @@ onlytextwidth, % Typeset content in columns at text width
 %------------------------------------------------
 
 \begin{frame}
-    \frametitle{Some Schemes You May Have Heard Of}
+    \frametitle{Some schemes you may have heard of}
     \framesubtitle{NTRU Based}
 
     \begin{columns}[T] % [T] ensures correct vertical alignment
@@ -416,14 +416,14 @@ onlytextwidth, % Typeset content in columns at text width
 %------------------------------------------------
 
 \begin{frame}
-    \frametitle{Some Schemes You May Have Heard Of}
+    \frametitle{Some schemes you may have heard of}
     \framesubtitle{LIP Based}
 
     \begin{columns}[T] % [T] ensures correct vertical alignment
         \begin{column}{0.58\linewidth} % Left column
             \textbf{HAWK}\\
             
-            Hawk\footfullcite{hawk} is the youngest of all schemes listed, and is currently the only lattice based scheme left in NISTs call for additional signature schemes\footfullcite{nistsig}. HAWKs biggest selling points are smaller keys and signatures compared to other signature schemes whilst maintaining the speed of lattices.
+            Hawk\footfullcite{hawk} is the youngest of all schemes listed, and is currently the only lattice based scheme left in NISTs call for additional signature schemes\footfullcite{nistsig}. HAWKs biggest selling points are smaller keys and signatures compared to other (LWE) signature schemes whilst maintaining the speed of lattices.
         \end{column}
         \begin{column}{0.4\linewidth} % Right column
             \textbf{Where Can I Find This?}\\
@@ -438,300 +438,16 @@ onlytextwidth, % Typeset content in columns at text width
 %------------------------------------------------
 
 \begin{frame}
-    \frametitle{Slide Title}
-    \framesubtitle{Section Title Examples}
+    \frametitle{What if I don't want to use lattices?}
 
-    \begin{columns}[T] % [T] ensures correct vertical alignment
-        \begin{column}{0.48\linewidth} % Left column
-            \textbf{Section Title}\\
-            Sed et mincipidem am fugia venihi aut utatem invellupis dolore voluptatiate veor mo dolendi squatur?
+    \begin{adjustwidth}{0cm}{0cm} % The first parameter is the left margin indentation and the second is the right margin indentation
+        There are plenty of other foundations for PQC such as isogenies, cubic forms, and codes. In some cases, these might solve some issues we have with lattices \textit{(key and signature size)}, but often with the trade-off of lattice benefits \textit{(speed)}.
 
-            Ab illate sitate explibus reiundusam, voluptur sim idebit, omnis dero quas adio quatur?
+        They can also let us create cool new applications, in the same way that lattices allow us to create fully homomorphic encryption, such as non-interactive key exchanges and verifiable delay functions.
 
-            Pa cumquat ute nos exero magnime officatem. Luptia voluptatur aut acia comnist qui beatusam, omniatecae iur alit, cus debis
-        \end{column}
-        \begin{column}{0.48\linewidth} % Right column
-            Sed et mincipidem am fugia venihitem aut utatem invellupis dolore voluptatiate verior mo dolendi squatur?
-
-            \textbf{Section Title}\\
-            Ab illate sitate explibus reiundusam, voluptur sim idebit, omnis dero quas adio quatur?
-
-            Pa cumquat ute nos exero magnime officatem. Luptia voluptatur aut acia comnist qui beatusam, omniatecae iur alit, cus debis
-        \end{column}
-    \end{columns}
+        Their biggest selling point is that they're based on different hard problems - if SVP is broken in the same way that factoring was, we have something else to fall back on.
+    \end{adjustwidth}
 \end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-    \frametitle{Slide Title}
-    \framesubtitle{List Examples}
-
-    \begin{columns}[T] % [T] ensures correct vertical alignment
-        \begin{column}{0.48\linewidth} % Left column
-            \textbf{Bullet List}\\
-            \begin{itemize}
-                \item Sed et mincipidem am fugia venihi aut utatem invellupis dolore voluptatiate veor mo dolendi squatur?
-                \item Ab illate sitate explibus reiundusam, voluptur sim idebit, omnis dero quas adio quatur?
-                    \begin{itemize}
-                        \item Second level indented list item.
-                            \begin{itemize}
-                                \item Third level indented list item.
-                            \end{itemize}
-                    \end{itemize}
-                \item Pa cumquat ute nos exero magnime officatem. Luptia voluptatur aut acia comnist qui beatusam, omniatecae iur alit, cus debis
-            \end{itemize}
-        \end{column}
-        \begin{column}{0.48\linewidth} % Right column
-            \textbf{Numbered List}\\
-            \begin{enumerate}
-                \item Sed et mincipidem am fugia venihitem aut utatem invellupis dolore voluptatiate verior mo dolendi squatur?		
-                \item Ab illate sitate explibus reiundusam, voluptur sim idebit, omnis dero quas adio quatur?
-                    \begin{enumerate}
-                        \item Second level indented list item.
-                            \begin{enumerate}
-                                \item Third level indented list item.
-                            \end{enumerate}
-                    \end{enumerate}
-                \item Pa cumquat ute nos exero magnime officatem. Luptia voluptatur aut acia comnist qui beatusam, omniatecae iur alit, cus debis
-            \end{enumerate}
-        \end{column}
-    \end{columns}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-    \frametitle{Slide Title}
-    \framesubtitle{Three-Column Example}
-
-    \small % Reduce font size in this slide
-
-    \begin{columns}[T] % [T] ensures correct vertical alignment
-        \begin{column}{0.3\linewidth} % Left column
-            \textbf{Section Title}\\
-            Sed et mincipidem am fugia ve nihi aut utatem invellupis dore voluptatiate veor olendi squatur?
-
-            Ab illate sitate explibus reiundusam, voluptur sim idebit, omnis dero quas adio quatur? Pa cumquat ute nos exero magnime officatem. Luptia
-        \end{column}
-        \begin{column}{0.3\linewidth} % Center column
-            \textbf{Section Title}\\
-            Sed et mincipidem am fugia ve nihi aut utatem invellupis dore voluptatiate veor olendi squatur?
-
-            Ab illate sitate explibus reiundusam, voluptur sim idebit, omnis dero quas adio quatur? Pa cumquat ute nos exero magnime officatem. Luptia
-        \end{column}
-        \begin{column}{0.3\linewidth} % Right column
-            \textbf{Section Title}\\
-            Sed et mincipidem am fugia ve nihi aut utatem invellupis dore voluptatiate veor olendi squatur?
-
-            Ab illate sitate explibus reiundusam, voluptur sim idebit, omnis dero quas adio quatur? Pa cumquat ute nos exero magnime officatem. Luptia
-        \end{column}
-    \end{columns}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-    \frametitle{Slide Title}
-    \framesubtitle{Three-Column With Images Example}
-
-    \small % Reduce font size in this slide
-
-    \begin{columns}[T] % [T] ensures correct vertical alignment
-        \begin{column}{0.3\linewidth} % Left column
-            \includegraphics[width=\linewidth]{abt_7295054328859831271Mjc0ODA1Ng.jpg}\\[3pt]
-            \textbf{Section Title}\\			
-            Sed et mincipidem am fugia ve nihi aut utatem invellupis dore voluptatiate veor olendi squatur?
-
-            Ab illate sitate explibus reiundusam, voluptur sim idebit?
-        \end{column}
-        \begin{column}{0.3\linewidth} % Center column
-            \includegraphics[width=\linewidth]{abt_7295054328859831271Mjc0ODA1Ng.jpg}\\[3pt]
-            \textbf{Section Title}\\			
-            Sed et mincipidem am fugia ve nihi aut utatem invellupis dore voluptatiate veor olendi squatur?
-
-            Ab illate sitate explibus reiundusam, voluptur sim idebit?
-        \end{column}
-        \begin{column}{0.3\linewidth} % Right column
-            \includegraphics[width=\linewidth]{abt_7295054328859831271Mjc0ODA1Ng.jpg}\\[3pt]
-            \textbf{Section Title}\\			
-            Sed et mincipidem am fugia ve nihi aut utatem invellupis dore voluptatiate veor olendi squatur?
-
-            Ab illate sitate explibus reiundusam, voluptur sim idebit?
-        \end{column}
-    \end{columns}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-    \frametitle{Slide Title}
-    \framesubtitle{Large Right Image Example}
-
-    \begin{columns}[T] % [T] ensures correct vertical alignment
-        \begin{column}{0.48\linewidth} % Left column
-            \textbf{Section Title}
-
-            Sed et mincipidem am fugia venihi aut utatem invellupis dolore voluptatiate veor mo dolendi squatur?
-
-            Ab illate sitate explibus reiundusam, voluptur sim idebit, omnis dero quas adio quatur?
-
-            Pa cumquat ute nos exero magnime officatem. Luptia voluptatur aut acia comnist qui beatusam, omniatecae iur alit, cus debis
-        \end{column}
-        \begin{column}{0.48\linewidth} % Right column
-            \vspace{-3.5\baselineskip} % Pull image up
-
-            \includegraphics[trim=3cm 0cm 3cm 1cm, clip, width=\linewidth]{abt_7295054328859831271Mjc0ODA1Ng.jpg} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
-            {\tiny\textcolor{ICLBlue}{(Above) Photography Credit or Caption}}
-        \end{column}
-    \end{columns}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-    \begin{columns}[T] % [T] ensures correct vertical alignment
-        \begin{column}{0.48\linewidth} % Left column			
-            \includegraphics[trim=3cm 0cm 3cm 1cm, clip, width=\linewidth]{abt_7295054328859831271Mjc0ODA1Ng.jpg} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
-            {\tiny\textcolor{ICLBlue}{(Above) Photography Credit or Caption}}
-        \end{column}
-        \begin{column}{0.48\linewidth} % Right column
-            \textbf{Section Title}\\
-            Sed et mincipidem am fugia venihi aut utatem invellupis dolore voluptatiate veor mo dolendi squatur?
-
-            Ab illate sitate explibus reiundusam, voluptur sim idebit, omnis dero quas adio quatur?
-
-            Pa cumquat ute nos exero magnime officatem. Luptia voluptatur aut acia comnist qui beatusam, omniatecae iur alit, cus debis
-        \end{column}
-    \end{columns}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-    \begin{columns}[T] % [T] ensures correct vertical alignment
-        \begin{column}{0.48\linewidth} % Left column
-            \textbf{Section Title}\\
-            Sed et mincipidem am fugia venihi aut utatem invellupis dolore voluptatiate veor mo dolendi squatur?
-
-            Ab illate sitate explibus reiundusam, voluptur sim idebit, omnis dero quas adio quatur?
-
-            Pa cumquat ute nos exero magnime officatem. Luptia voluptatur aut acia comnist qui beatusam, omniatecae iur alit, cus debis
-        \end{column}
-        \begin{column}{0.48\linewidth} % Right column			
-            \includegraphics[trim=3cm 0cm 3cm 1cm, clip, width=\linewidth]{abt_7295054328859831271Mjc0ODA1Ng.jpg} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
-            {\tiny\textcolor{ICLBlue}{(Above) Photography Credit or Caption}}
-        \end{column}
-    \end{columns}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-    \includegraphics[trim=0cm 1.5cm 0cm 1.5cm, clip, width=\linewidth, height=\textheight]{abt_7295054328859831271Mjc0ODA1Ng.jpg} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
-\end{frame}
-
-%------------------------------------------------
-
-\begingroup
-\setbeamertemplate{background}{\includegraphics[width=\paperwidth]{abt_7295054328859831271Mjc0ODA1Ng.jpg}} % Slide background image
-
-\begin{frame}[plain] % 'plain' suppresses the footer
-\end{frame}
-\endgroup
-
-%------------------------------------------------
-
-\begingroup
-\setbeamertemplate{background}{\includegraphics[width=\paperwidth]{abt_7295054328859831271Mjc0ODA1Ng.jpg}} % Slide background image
-\setbeamercolor{normal text}{fg=white}\usebeamercolor[fg]{normal text} % Slide text color
-\setbeamercolor{page number in head/foot}{fg=white} % Footer text color
-
-\begin{frame}
-    Text can be included on slides with image backgrounds too.
-\end{frame}
-\endgroup
-
-%------------------------------------------------
-
-\begin{frame}
-    \frametitle{Slide Title}
-    \framesubtitle{Tiled Images Example}
-
-    \small % Reduce font size in this slide
-
-    \begin{columns}[T] % [T] ensures correct vertical alignment
-        \begin{column}{0.3\linewidth} % Left column
-            \textbf{Section Title}\\
-            Sed et mincipidem am fugia venihi aut utatem invellupis dolore voluptatiate veor mo dolendi squatur?
-
-            Ab illate sitate explibus reiundusam, voluptur sim idebit, omnis dero quas adio quatur?
-        \end{column}
-        \begin{column}{0.68\linewidth} % Right column
-            \vspace{-3.5\baselineskip} % Pull images up
-
-            \includegraphics[width=0.32\linewidth]{abt_7295054328859831271Mjc0ODA1Ng.jpg}\hfill\includegraphics[width=0.32\linewidth]{abt_7295054328859831271Mjc0ODA1Ng.jpg}\hfill\includegraphics[width=0.32\linewidth]{abt_7295054328859831271Mjc0ODA1Ng.jpg}\\[6pt]
-            \includegraphics[width=0.32\linewidth]{abt_7295054328859831271Mjc0ODA1Ng.jpg}\hfill\includegraphics[width=0.32\linewidth]{abt_7295054328859831271Mjc0ODA1Ng.jpg}\hfill\includegraphics[width=0.32\linewidth]{abt_7295054328859831271Mjc0ODA1Ng.jpg}\\[6pt]
-            \includegraphics[width=0.32\linewidth]{abt_7295054328859831271Mjc0ODA1Ng.jpg}\hfill\includegraphics[width=0.32\linewidth]{abt_7295054328859831271Mjc0ODA1Ng.jpg}\hfill\includegraphics[width=0.32\linewidth]{abt_7295054328859831271Mjc0ODA1Ng.jpg}\par
-        \end{column}
-    \end{columns}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-    \frametitle{Slide Title}
-    \framesubtitle{Tiled Images Example}
-
-    \small % Reduce font size in this slide
-
-    \begin{columns}[T] % [T] ensures correct vertical alignment
-        \begin{column}{0.3\linewidth} % Left column
-            \textbf{Section Title}\\
-            Sed et mincipidem am fugia venihi aut utatem invellupis dolore voluptatiate veor mo dolendi squatur?
-
-            Ab illate sitate explibus reiundusam, voluptur sim idebit, omnis dero quas adio quatur?
-        \end{column}
-        \begin{column}{0.68\linewidth} % Right column
-            \vspace{-3.5\baselineskip} % Pull images up
-
-            \includegraphics[width=0.495\linewidth]{abt_7295054328859831271Mjc0ODA1Ng.jpg}\hfill\includegraphics[width=0.495\linewidth]{abt_7295054328859831271Mjc0ODA1Ng.jpg}\\[4pt]
-            \includegraphics[width=0.495\linewidth]{abt_7295054328859831271Mjc0ODA1Ng.jpg}\hfill\includegraphics[width=0.495\linewidth]{abt_7295054328859831271Mjc0ODA1Ng.jpg}\par
-        \end{column}
-    \end{columns}
-\end{frame}
-
-%------------------------------------------------
-
-\begingroup
-\setbeamercolor{background canvas}{bg=ICLBlue} % Slide background color
-
-\begin{frame}[plain] % 'plain' suppresses the footer
-    \medskip % Vertical whitespace
-    \centering % Horizontally center the logo
-    \includegraphics[width=0.99\textwidth]{ICL_Logo_White.pdf}
-\end{frame}
-\endgroup
-
-%------------------------------------------------
-
-\begin{frame}[plain] % 'plain' suppresses the footer
-    \medskip % Vertical whitespace
-    \centering % Horizontally center the logo
-    \includegraphics[width=0.99\textwidth]{ICL_Logo_Blue.pdf}
-\end{frame}
-
-%------------------------------------------------
-
-\begingroup
-\setbeamertemplate{background}{\includegraphics[width=\paperwidth]{abt_7295054328859831271Mjc0ODA1Ng.jpg}} % Slide background image
-
-	\begin{frame}[plain] % 'plain' suppresses the footer
-		\medskip % Vertical whitespace
-		\centering % Horizontally center the logo
-		\includegraphics[width=0.99\textwidth]{ICL_Logo_White.pdf}
-	\end{frame}
-\endgroup
 
 %----------------------------------------------------------------------------------------
 %	CLOSING SLIDES
@@ -744,18 +460,6 @@ onlytextwidth, % Typeset content in columns at text width
 	\setbeamercolor{normal text}{fg=white}\usebeamercolor[fg]{normal text} % Slide text color
 	\setbeamertemplate{closing slide logo}[logo]{ICL_Logo_White.pdf} % Imperial logo color, use 'ICL_Logo_White.pdf' for white and 'ICL_Logo_Blue.pdf' for blue
 	\setbeamertemplate{closing slide text}[text]{Thank you} % Slide text
-	
-	\usebeamertemplate{closing slide} % Output the closing slide
-\endgroup
-
-%------------------------------------------------
-
-% White closing slide
-
-\begingroup
-	\setbeamercolor{normal text}{fg=ICLBlue}\usebeamercolor[fg]{normal text} % Slide text color
-	\setbeamertemplate{closing slide logo}[logo]{ICL_Logo_Blue.pdf} % Imperial logo color, use 'ICL_Logo_White.pdf' for white and 'ICL_Logo_Blue.pdf' for blue
-	\setbeamertemplate{closing slide text}[text]{Thank you.\\ Questions?} % Slide text
 	
 	\usebeamertemplate{closing slide} % Output the closing slide
 \endgroup

@@ -1,4 +1,4 @@
 with import <nixpkgs> {};
 mkShell {
-    buildInputs = [ texliveFull texlivePackages.beamer python3 python313Packages.matplotlib python313Packages.numpy ];
+    buildInputs = [ texliveFull texlivePackages.beamer python3 python312Packages.matplotlib python312Packages.numpy ];
 }
