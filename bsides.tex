@@ -311,6 +311,26 @@ onlytextwidth, % Typeset content in columns at text width
     \end{columns}
 \end{frame}
 
+%------------------------------------------------
+
+\begin{frame}
+    \frametitle{Lattice Isomorphism Problem \textit{(in the wild)}}
+    \begin{columns}[T] % [T] ensures correct vertical alignment
+        \begin{column}{0.48\linewidth} % Left column
+            \includegraphics[height=70mm]{lip_in_the_wild.jpeg} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{tcolorbox}[colback=ICLBlue!5!white,colframe=ICLBlue,title=Lattice Isomorphism Problem (LIP)]
+                Given two lattices $\mathcal{L}_1$ and $\mathcal{L}_2$, find the \textit{isometry} between the two lattices.
+
+                In other words, find the translation that describes the rotation and scaling factor that sends $\mathcal{L}_1$ to $\mathcal{L}_2$.
+            \end{tcolorbox}
+            This is the $A_2$ lattice, the densest sphere packing in two dimensions.
+
+            Here, the rotation is $90^\circ$, with a scaling factor of $1$.
+        \end{column}
+    \end{columns}
+\end{frame}
 
 %------------------------------------------------
 
@@ -446,6 +466,105 @@ onlytextwidth, % Typeset content in columns at text width
         They can also let us create cool new applications, in the same way that lattices allow us to create fully homomorphic encryption, such as non-interactive key exchanges and verifiable delay functions.
 
         Their biggest selling point is that they're based on different hard problems - if SVP is broken in the same way that factoring was, we have something else to fall back on.
+    \end{adjustwidth}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+    \frametitle{What if I don't want to use lattices?}
+    \begin{columns}[T] % [T] ensures correct vertical alignment
+        \begin{column}{0.48\linewidth} % Left column
+            \includegraphics[width=\linewidth]{comparison_pke.png} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
+        \end{column}
+        \begin{column}{0.48\linewidth} % Right column
+            \includegraphics[width=\linewidth]{comparison_sig.png} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
+        \end{column}
+    \end{columns}
+    \textit{Note: These are \textbf{logarithmic} in scale. These are to give an illustrative and intuitive idea for performance of different schemes. In some cases, the experiments were run on different CPUs, and these values are the normalised logarithmic sum of all metrics. DO NOT USE THIS FOR SERIOUS EVALUATION.}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+    \frametitle{The PQC timeline}
+    \begin{columns}
+        \begin{column}{0.58\linewidth} % Left column
+    \vspace{-3em}
+            \begin{table}[]
+                \begin{tabular}{|l|l|l|}
+                    \hline
+                    \textbf{Scheme} & \textbf{Deprecated} & \textbf{Disallowed} \\
+                                    & \textit{(112 bit strength only)}& \\
+                    \hline
+                    \textit{Key Establishment}&&\\
+                    Finite Field DH and MQV & 2030 & 2035 \\
+                    Elliptic Curve DH and MQV & 2030 & 2035 \\
+                    RSA & 2030 & 2035 \\
+                    \hline
+                    \textit{Signatures}&&\\
+                    ECDSA & 2030 & 2035 \\
+                    EdDSA & - & 2035 \\
+                    RSA & 2030 & 2035 \\
+                    \hline
+                \end{tabular}
+            \end{table}
+        \end{column}
+        \begin{column}{0.32\linewidth} % Left column
+            \newline
+            \textbf{Replace with:}\\
+            \textit{Key Establishment}
+            \vspace{-1em}
+            \begin{itemize}
+                \item ML-KEM
+            \end{itemize}
+            \textit{Signatures}
+            \vspace{-1em}
+            \begin{itemize}
+                \item ML-DSA
+                \item SLH-DSA
+                \item LMS, HSS
+                \item XMSS
+            \end{itemize}
+        \end{column}
+    \end{columns}
+    \begin{columns}
+        \begin{column}{0.3\linewidth} % Right column
+            \begin{itemize}
+                \item \textbf{Acceptable}: \\Approved for use.
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.3\linewidth} % Right column
+            \begin{itemize}
+                \item \textbf{Deprecated}: \\Some security risk, assess before use.
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.3\linewidth} % Right column
+            \begin{itemize}
+                \item \textbf{Disallowed}: \\No longer allowed for stated purpose.
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+    \frametitle{What does all this mean for me?}
+    \begin{adjustwidth}{0cm}{0.15\textwidth} % The first parameter is the left margin indentation and the second is the right margin indentation
+        \begin{itemize}
+            \item You should begin to use hybrid encryption now
+            \begin{itemize}
+                \item Especially if a ``harvest now, decrypt later'' threat is relevant to you
+                \item Have the fallback of ECC if PQC is broken
+                \item Schemes such as X-wing and Xyber768
+            \end{itemize}
+            \item For most people, this is as simple as upgrading your browser and dependencies (most crypto is dependent on upstream libs like openSSL)
+        \end{itemize}
+        \vspace{1.5em}
+        \begin{quote}
+            ``Any digital system that uses existing public standards for public‑key cryptography, or that is planning to transition to such cryptography, could be vulnerable to an attack by a Cryptographically Relevant Quantum Computer (CRQC). To mitigate this risk, the United States must prioritize the timely and equitable transition of cryptographic systems to quantum-resistant cryptography, with the goal of mitigating as much of the quantum risk as is feasible by 2035.''\footfullcite{nsm10}
+        \end{quote}
     \end{adjustwidth}
 \end{frame}
 

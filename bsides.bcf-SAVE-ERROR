@@ -2373,6 +2373,3 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1" intorder="1">shor</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">classical</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">mlkem</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">mldsa</bcf:citekey>
