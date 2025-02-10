@@ -474,10 +474,10 @@ onlytextwidth, % Typeset content in columns at text width
 \begin{frame}
     \frametitle{What if I don't want to use lattices?}
     \begin{columns}[T] % [T] ensures correct vertical alignment
-        \begin{column}{0.48\linewidth} % Left column
+        \begin{column}{0.5\linewidth} % Left column
             \includegraphics[width=\linewidth]{comparison_pke.png} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
         \end{column}
-        \begin{column}{0.48\linewidth} % Right column
+        \begin{column}{0.5\linewidth} % Right column
             \includegraphics[width=\linewidth]{comparison_sig.png} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
         \end{column}
     \end{columns}
@@ -489,8 +489,20 @@ onlytextwidth, % Typeset content in columns at text width
 \begin{frame}
     \frametitle{The PQC timeline}
     \begin{columns}
+        \begin{column}{0.5\linewidth} % Right column
+            \begin{itemize}
+                \item \textbf{Deprecated}: \\the algorithm and key length/strength may be used, but there is some security risk. Assess risk before using a deprecated algorithm or key length.
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\linewidth} % Right column
+            \begin{itemize}
+                \item \textbf{Disallowed}: \\the algorithm, key length/strength, parameter set, or scheme is no longer allowed for the stated purpose.
+            \end{itemize}
+        \end{column}
+    \end{columns}
+    \begin{columns}
         \begin{column}{0.58\linewidth} % Left column
-    \vspace{-3em}
+        \vspace{-2em}
             \begin{table}[]
                 \begin{tabular}{|l|l|l|}
                     \hline
@@ -525,23 +537,6 @@ onlytextwidth, % Typeset content in columns at text width
                 \item SLH-DSA
                 \item LMS, HSS
                 \item XMSS
-            \end{itemize}
-        \end{column}
-    \end{columns}
-    \begin{columns}
-        \begin{column}{0.3\linewidth} % Right column
-            \begin{itemize}
-                \item \textbf{Acceptable}: \\Approved for use.
-            \end{itemize}
-        \end{column}
-        \begin{column}{0.3\linewidth} % Right column
-            \begin{itemize}
-                \item \textbf{Deprecated}: \\Some security risk, assess before use.
-            \end{itemize}
-        \end{column}
-        \begin{column}{0.3\linewidth} % Right column
-            \begin{itemize}
-                \item \textbf{Disallowed}: \\No longer allowed for stated purpose.
             \end{itemize}
         \end{column}
     \end{columns}
