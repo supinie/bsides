@@ -569,18 +569,23 @@ onlytextwidth, % Typeset content in columns at text width
     \frametitle{Further reading}
     \begin{adjustwidth}{0cm}{0.15\textwidth} % The first parameter is the left margin indentation and the second is the right margin indentation
         \begin{columns}[T] % [T] ensures correct vertical alignment
-            \begin{column}{0.4\linewidth} % Left column
+            \begin{column}{0.3\linewidth} % Right column
+                \centering{\textbf{General\\Cryptography}}
+                \includegraphics[width=\linewidth]{general.png}
+            \end{column}
+            \begin{column}{0.3\linewidth} % Left column
                 \centering{\textbf{Lattices and\\Lattice Cryptography:}}
                 \includegraphics[width=\linewidth]{lattices_resources.png}
             \end{column}
-            \begin{column}{0.4\linewidth} % Center column
-                \centering{\textbf{PQC Implementations:\newline}}
+            \begin{column}{0.3\linewidth} % Center column
+                % \centering{\textbf{PQC Implementations:\newline}}
 
-                \vspace{-0.75em}
+                % \vspace{-0.75em}
+                \centering{\textbf{PQC\\Implementations:}}
                 \includegraphics[width=\linewidth]{implementation.png}
             \end{column}
-            \begin{column}{0.4\linewidth} % Right column
-                \centering{\textbf{PQC Policy, Standardisation,\\and Migration:}}
+            \begin{column}{0.3\linewidth} % Right column
+                \centering{\textbf{Policy, Migration,\\and Standardisation:}}
                 \includegraphics[width=\linewidth]{policy.png}
             \end{column}
         \end{columns}
