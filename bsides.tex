@@ -499,7 +499,8 @@ onlytextwidth, % Typeset content in columns at text width
 
             \vspace{-1.5em}{\tiny\textcolor{ICLBlue}{(Above) Regev discovering the the LWE to $\gamma$-SVP reduction, 2005}}\newline
 
-            \vspace{-2em}But don't worry, even though all of these problems are reducible to SVP, they all work in slightly different ways, giving the schemes we build from them different properties (speed, key size, etc.).
+            \vspace{-2em}All of the above problems are reducible to (approximate)-SVP. It can easily be seen that solving CVP solves them, but to solve CVP you need a good basis.
+            To get a good basis, you need to find short vectors - i.e. solve SVP.
         \end{column}
         \begin{column}{0.38\linewidth} % Right column
             \includegraphics[width=0.85\linewidth]{svp_crutch.jpeg} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
