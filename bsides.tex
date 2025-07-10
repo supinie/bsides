@@ -233,12 +233,67 @@ onlytextwidth, % Typeset content in columns at text width
 
 %------------------------------------------------
 
-% \begin{frame}
-%     \frametitle{What is a lattice?}
-%     \begin{columns}[T]
-%         \begin{column}{0.35\linewidth}
-
-% \end{frame}
+\begin{frame}
+    \frametitle{What is a lattice?}
+    \begin{columns}[T]
+        \begin{column}{0.33\linewidth}
+            \begin{center}
+                \begin{tcolorbox}[colback=ICLBlue!5!white,colframe=ICLBlue,title=\textbf{Good Basis}]
+            \begin{itemize}
+                \item Short vectors
+                \item Orthogonal
+            \end{itemize}
+            \end{tcolorbox}
+            \end{center}
+        \end{column}
+        \begin{column}{0.33\linewidth}
+            \begin{center}
+                \Huge
+                \(\color{green}\longrightarrow\)\\
+                \vspace{20pt}
+                \(\color{red}\longleftarrow\)
+                \normalsize
+            \end{center}
+        \end{column}
+        \begin{column}{0.33\linewidth}
+            \begin{center}
+                \begin{tcolorbox}[colback=ICLBlue!5!white,colframe=ICLBlue,title=\textbf{Bad Basis}]
+            \begin{itemize}
+                \item Long vectors
+                \item Not orthogonal
+            \end{itemize}
+            \end{tcolorbox}
+            \end{center}
+        \end{column}
+    \end{columns}
+    This process of going from a bad to good basis is called \textbf{basis reduction}.
+    \begin{columns}
+        \begin{column}{0.33\linewidth}
+                \begin{tcolorbox}[colback=ICLBlue!5!white,colframe=ICLBlue,title=\textbf{LLL}]
+                    \begin{itemize}
+                        \item Polynomial runtime (in dimension)
+                        \item Exponential approximation (in dimension)
+                    \end{itemize}
+                \end{tcolorbox}
+        \end{column}
+        \begin{column}{0.33\linewidth}
+                \begin{tcolorbox}[colback=ICLBlue!5!white,colframe=ICLBlue,title=\textbf{BKZ}]
+                    \begin{itemize}
+                        \item Exponential runtime (in blocksize)
+                        \item Exponential approximation (in blocksize)
+                    \end{itemize}
+                \end{tcolorbox}
+        \end{column}
+        \begin{column}{0.33\linewidth}
+                \begin{tcolorbox}[colback=ICLBlue!5!white,colframe=ICLBlue,title=\textbf{HKZ}]
+                    \begin{itemize}
+                        \item Exponential runtime (in dimension)
+                        \item Optimal output
+                    \end{itemize}
+                \end{tcolorbox}
+        \end{column}
+    \end{columns}
+\end{frame}
 
 %------------------------------------------------
 
@@ -262,6 +317,24 @@ onlytextwidth, % Typeset content in columns at text width
         But we also have the Short Integer Solutions problem (SIS), the NTRU problem, the Closest Vector Problem (CVP), and all the many variants of anything mentioned here!
 
     \end{adjustwidth}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+    \frametitle{Closest Vector Problem}
+        \begin{tcolorbox}[colback=ICLBlue!5!white,colframe=ICLBlue,title=\textbf{Definition:} Closest Vector Problem (CVP)]
+            Given a lattice and a random point, find the closest lattice point.
+        \end{tcolorbox}
+
+        \begin{columns}[T]
+            \begin{column}{0.48\linewidth}
+                \includegraphics[width=\linewidth]{cvp_good_basis.png}
+            \end{column}
+            \begin{column}{0.48\linewidth}
+                \includegraphics[width=\linewidth]{cvp_bad_basis.png}
+            \end{column}
+        \end{columns}
 \end{frame}
 
 %------------------------------------------------
@@ -316,10 +389,17 @@ onlytextwidth, % Typeset content in columns at text width
     \frametitle{Lattice Isomorphism Problem}
     \begin{columns}[T] % [T] ensures correct vertical alignment
         \begin{column}{0.48\linewidth} % Left column
-            \includegraphics[width=\linewidth]{lip_instance.jpeg} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
+            \includegraphics[height=70mm]{lip_in_the_wild.jpeg} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
         \end{column}
-        \begin{column}{0.48\linewidth} % Right column
-            \includegraphics[width=\linewidth]{lip_instance_alt.jpeg} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
+        \begin{column}{0.48\linewidth}
+            \begin{tcolorbox}[colback=ICLBlue!5!white,colframe=ICLBlue,title=Lattice Isomorphism Problem (LIP)]
+                Given two lattices $\mathcal{L}_1$ and $\mathcal{L}_2$, find the \textit{isometry} between the two lattices.
+
+                In other words, find the translation that describes the rotation that sends $\mathcal{L}_1$ to $\mathcal{L}_2$.
+            \end{tcolorbox}
+            This is the $A_2$ lattice, the densest sphere packing in two dimensions.
+
+            Here, the rotation is $90^\circ$, with a scaling factor of $1$.
         \end{column}
     \end{columns}
 \end{frame}
@@ -327,20 +407,83 @@ onlytextwidth, % Typeset content in columns at text width
 %------------------------------------------------
 
 \begin{frame}
-    \frametitle{Lattice Isomorphism Problem \textit{(in the wild)}}
-    \begin{columns}[T] % [T] ensures correct vertical alignment
-        \begin{column}{0.48\linewidth} % Left column
-            \includegraphics[height=70mm]{lip_in_the_wild.jpeg} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
+    \frametitle{Lattice Isomorphism Problem}
+    \begin{columns}[T]
+        \begin{column}{0.48\linewidth}
+            First, we take a lattice that has nice properties (dense, good decoding etc.).
+
         \end{column}
         \begin{column}{0.48\linewidth}
-            \begin{tcolorbox}[colback=ICLBlue!5!white,colframe=ICLBlue,title=Lattice Isomorphism Problem (LIP)]
-                Given two lattices $\mathcal{L}_1$ and $\mathcal{L}_2$, find the \textit{isometry} between the two lattices.
+            \includegraphics[width=\linewidth]{a2_good_basis.png}
+        \end{column}
+    \end{columns}
+\end{frame}
 
-                In other words, find the translation that describes the rotation and scaling factor that sends $\mathcal{L}_1$ to $\mathcal{L}_2$.
-            \end{tcolorbox}
-            This is the $A_2$ lattice, the densest sphere packing in two dimensions.
+%------------------------------------------------
 
-            Here, the rotation is $90^\circ$, with a scaling factor of $1$.
+\begin{frame}
+    \frametitle{Lattice Isomorphism Problem}
+    \begin{columns}[T]
+        \begin{column}{0.48\linewidth}
+            First, we take a lattice that has nice properties (dense, good decoding etc.).
+
+            Then, we apply some \textbf{unimodular} transform. This equates to a rotation of our original lattice, and we say that these two are \textbf{isomorphic}.
+
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \includegraphics[width=\linewidth]{a2_rotated_basis.png}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+    \frametitle{Lattice Isomorphism Problem}
+    \begin{columns}[T]
+        \begin{column}{0.48\linewidth}
+            First, we take a lattice that has nice properties (dense, good decoding etc.).
+
+            Then, we apply some \textbf{unimodular} transform. This equates to a rotation of our original lattice, and we say that these two are \textbf{isomorphic}.
+
+            Finally, we hide this rotation with a basis transform; we make a bad basis of this isomorphism.
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \includegraphics[width=\linewidth]{a2_rotated_basis_change.png}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+    \frametitle{Lattice Isomorphism Problem}
+    \begin{columns}[T]
+        \begin{column}{0.48\linewidth}
+            To encrypt, we take our message, a lattice point in the public lattice and add some small error.
+            
+            Recovering this original lattice point using the (bad) public basis is hard to do.
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \includegraphics[width=\linewidth]{LIP_bad_basis.png}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+    \frametitle{Lattice Isomorphism Problem}
+    \begin{columns}[T]
+        \begin{column}{0.48\linewidth}
+            To encrypt, we take our message, a lattice point in the public lattice and add some small error.
+            
+            Recovering this original lattice point using the (bad) public basis is hard to do.
+
+            Knowing the rotation, we can convert this back to our original lattice, which we know a good basis for, and can easily recover the corresponding lattice point.
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \includegraphics[width=\linewidth]{LIP_good_basis.png}
         \end{column}
     \end{columns}
 \end{frame}
@@ -364,137 +507,6 @@ onlytextwidth, % Typeset content in columns at text width
             \vspace{-1.5em}{\tiny\textcolor{ICLBlue}{(Above) xkcd Dependency, lattice based cryptography special edition}}
         \end{column}
     \end{columns}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-    \frametitle{What can we do with lattices?}
-
-    % Top-left quarter
-    \begin{minipage}[t][0.45\textheight][t]{0.48\linewidth}
-        \textbf{Fully Homomorphic Encryption}\\
-        FHE allows computations to be applied on encrypted data without needing to be decrypted first. This allows a user to allow a semi-trusted third party to operate on their data, without being able to access it, in such a way that when the user decrypts their data the same operations have been applied to the plaintext.
-    \end{minipage}%
-    \hfill
-    % Top-right quarter
-    \begin{minipage}[t][0.45\textheight][t]{0.48\linewidth}
-        \textbf{Cryptanalysis of Classical Schemes}\\
-        Lattices are also used by cryptographers when attacking classical schemes such as RSA and ECC. They typically exploit weaknesses in parameter generation and utilise the collection of many signed messages by a single key\footfullcite{classical}.
-    \end{minipage}
-    
-
-    \vspace{-1.5em}
-    % Bottom-left quarter
-    \begin{minipage}[t][0.45\textheight][t]{0.48\linewidth}
-        \textbf{Secure Multiparty Computation}\\
-        Similar to FHE, MPC is a privacy preserving construct in which a number of participants all want to compute a value as a public function of each of their private data. MPC allows them to do so whilst maintaining the secrecy of their inputs.
-    \end{minipage}
-    \hfill
-    % Bottom-right quarter
-    \begin{minipage}[t][0.2\textheight][t]{0.48\linewidth}
-        \vspace{3.5em}
-        \textbf{Post-Quantum Cryptography}\\
-        It is believed that these lattice problems are hard to solve even on quantum computers.
-    \end{minipage}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-    \frametitle{Some schemes you may have heard of}
-    \framesubtitle{LWE Based}
-
-    \begin{columns}[T] % [T] ensures correct vertical alignment
-        \begin{column}{0.42\linewidth} % Left column
-            \textbf{ML-KEM/Kyber and ML-DSA/Dilithium}\\
-            
-            ML-KEM\footfullcite{mlkem}/DSA\footfullcite{mldsa} were both elected by NIST as schemes for standardisation, with the standards published August 2024. These are both front runners due to their speed, however their drawback is a fairly large key size. LWE is a well studied assumption, with strong worst and average case analysis.
-        \end{column}
-        \begin{column}{0.55\linewidth} % Right column
-            \textbf{Where Can I Find This?}\\
-            \begin{itemize}
-                \item Cloudflare now support x25519xML-KEM in CIRCL\footnote{https://blog.cloudflare.com/post-quantum-to-origins/}
-            \item Chrome supports x25519xML-KEM as default for TLS\footnote{https://blog.chromium.org/2023/08/protecting-chrome-traffic-with-hybrid.html}
-                \item liboqs, the open-quantum-safe x Microsoft fork of openTLS supports ML-KEM and ML-DSA\footnote{https://github.com/open-quantum-safe/liboqs}
-                \item As of release 9.9, OpenSSH supports mlkem768x25519-sha256 by default\footnote{https://www.openssh.com/releasenotes.html}
-                \item Amazon supports ML-KEM in hybrid in AWS Key Management Service\footnote{https://aws.amazon.com/kms/}
-            \end{itemize}
-        \end{column}
-    \end{columns}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-    \frametitle{Some schemes you may have heard of}
-    \framesubtitle{NTRU Based}
-
-    \begin{columns}[T] % [T] ensures correct vertical alignment
-        \begin{column}{0.42\linewidth} % Left column
-            \textbf{Falcon and NTRUPrime}\\
-            
-            Falcon\footfullcite{falcon} was selected as a digital signature scheme by NIST, however is yet to be standardised. NTRUPrime\footfullcite{ntruprime} was not selected for standarisation by NIST, but is another popular key encapsulation scheme.
-        \end{column}
-        \begin{column}{0.55\linewidth} % Right column
-            \textbf{Where Can I Find This?}\\
-            \begin{itemize}
-                \item liboqs, the open-quantum-safe x Microsoft fork of openTLS supports Falcon and NTRUPrime\footnote{https://github.com/open-quantum-safe/liboqs}
-                \item As of release 9.9, OpenSSH supports sntrup761x25519-sha512 by default\footnote{https://www.openssh.com/releasenotes.html}
-            \end{itemize}
-        \end{column}
-    \end{columns}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-    \frametitle{Some schemes you may have heard of}
-    \framesubtitle{LIP Based}
-
-    \begin{columns}[T] % [T] ensures correct vertical alignment
-        \begin{column}{0.58\linewidth} % Left column
-            \textbf{HAWK}\\
-            
-            Hawk\footfullcite{hawk} is the youngest of all schemes listed, and is currently the only lattice based scheme left in NISTs call for additional signature schemes\footfullcite{nistsig}. HAWKs biggest selling points are smaller keys and signatures compared to other (LWE) signature schemes whilst maintaining the speed of lattices.
-        \end{column}
-        \begin{column}{0.4\linewidth} % Right column
-            \textbf{Where Can I Find This?}\\
-            \begin{itemize}
-                \item No where I could find yet...
-            \end{itemize}
-        \end{column}
-    \end{columns}
-\end{frame}
-
-
-%------------------------------------------------
-
-\begin{frame}
-    \frametitle{What if I don't want to use lattices?}
-
-    \begin{adjustwidth}{0cm}{0cm} % The first parameter is the left margin indentation and the second is the right margin indentation
-        There are plenty of other foundations for PQC such as isogenies, cubic forms, and codes. In some cases, these might solve some issues we have with lattices \textit{(key and signature size)}, but often with the trade-off of lattice benefits \textit{(speed)}.
-
-        They can also let us create cool new applications, in the same way that lattices allow us to create fully homomorphic encryption, such as non-interactive key exchanges and verifiable delay functions.
-
-        Their biggest selling point is that they're based on different hard problems - if SVP is broken in the same way that factoring was, we have something else to fall back on.
-    \end{adjustwidth}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-    \frametitle{What if I don't want to use lattices?}
-    \begin{columns}[T] % [T] ensures correct vertical alignment
-        \begin{column}{0.5\linewidth} % Left column
-            \includegraphics[width=\linewidth]{comparison_pke.png} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
-        \end{column}
-        \begin{column}{0.5\linewidth} % Right column
-            \includegraphics[width=\linewidth]{comparison_sig.png} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
-        \end{column}
-    \end{columns}
-    \textit{Note: These are \textbf{logarithmic} in scale. These are to give an illustrative and intuitive idea for performance of different schemes. In some cases, the experiments were run on different CPUs, and these values are the normalised logarithmic sum of all metrics. DO NOT USE THIS FOR SERIOUS EVALUATION.}
 \end{frame}
 
 %------------------------------------------------

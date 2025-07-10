@@ -131,8 +131,8 @@ if __name__ == '__main__':
     bad_rot_voronoi = [bad_rot_2, rotated_b2]
 
     fig, ax = plt.subplots()
-    points = plotLattice(ax, rotated_basis_vectors, ldown, rup, 'blue', 3, 1)
-    # plotParallelepipeds(ax, bad_rot_voronoi, points, 'green', 1, 0.25, rotated_target_point, rot_e)
+    points = plotLattice(ax, basis_vectors, ldown, rup, 'blue', 3, 1)
+    plotParallelepipeds(ax, basis_vectors, points, 'green', 1, 0.25, target_point, e)
 
     # resize the plotting window
     mngr = plt.get_current_fig_manager()
@@ -150,9 +150,9 @@ if __name__ == '__main__':
     ax.spines['bottom'].set_color('none')
     ax.spines['left'].set_color('none')
     ax.tick_params(left=False, bottom=False, labelleft=False, labelbottom=False)    
-    # ax.scatter(rotated_target_point[0] - e[0], rotated_target_point[1] - e[1], color='green', linewidths=5, alpha=0.25)
-    # ax.scatter(rotated_target_point[0], rotated_target_point[1], color='red', linewidths=5, alpha=0.25)
-    ax.quiver(0, 0, bad_rot_1[0], bad_rot_1[1], color='red', scale_units='xy', scale=1, alpha=1)
-    ax.quiver(0, 0, bad_rot_2[0], bad_rot_2[1], color='blue', scale_units='xy', scale=1, alpha=1)
+    ax.scatter(rotated_target_point[0] - rot_e[0], rotated_target_point[1] - rot_e[1], color='green', linewidths=5, alpha=0.25)
+    ax.scatter(rotated_target_point[0], rotated_target_point[1], color='red', linewidths=5, alpha=0.25)
+    # ax.quiver(0, 0, bad_rot_1[0], bad_rot_1[1], color='red', scale_units='xy', scale=1, alpha=1)
+    # ax.quiver(0, 0, bad_rot_2[0], bad_rot_2[1], color='blue', scale_units='xy', scale=1, alpha=1)
     # show the plot
     plt.show()
