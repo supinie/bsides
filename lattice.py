@@ -40,8 +40,8 @@ def plotLattice(ax, basis_vectors, ldown, rup, color, linewidth, alpha):
                 points.append(p)
 
     # plot basis vectors
-    ax.quiver(0, 0, b1[0], b1[1], color='red', scale_units='xy', scale=1, alpha=0.25)
-    ax.quiver(0, 0, b2[0], b2[1], color='blue', scale_units='xy', scale=1, alpha=0.25)
+    ax.quiver(0, 0, b1[0], b1[1], color='red', scale_units='xy', scale=1, alpha=1)
+    ax.quiver(0, 0, b2[0], b2[1], color='blue', scale_units='xy', scale=1, alpha=1)
     # ax.quiver(0, 0, b2[0] + b1[0], b2[1] + b1[1], color='red', scale_units='xy', scale=1, alpha=1)
     # ax.quiver(0, 0, 2 * b2[0] + b1[0], 2 * b2[1] + b1[1], color='blue', scale_units='xy', scale=1, alpha=1)
 
