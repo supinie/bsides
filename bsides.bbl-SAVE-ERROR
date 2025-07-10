@@ -1,0 +1,527 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global/global}
+    \entry{mldsa}{misc}{}{}
+      \name{author}{12}{}{%
+        {{hash=381bada1fa44d20154d82a788713ac81}{%
+           family={Avanzi},
+           familyi={A\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=ad80583dc48a655562df850af8203959}{%
+           family={Bai},
+           familyi={B\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e59cfbb46dda4843021339ea939520e9}{%
+           family={Bos},
+           familyi={B\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=8af70f080770a6d6bc38f881e402dd52}{%
+           family={Ding},
+           familyi={D\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=8bfab5ef264630c92971259caadcaff1}{%
+           family={Ducas},
+           familyi={D\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=67d88b70617cce9b680ad5c695876179}{%
+           family={Kiltz},
+           familyi={K\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=707dcc39dee1cf44bf8166ff5f296ac2}{%
+           family={Lepoint},
+           familyi={L\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=b1519ad441b82d6cf85ef903371adb15}{%
+           family={Lyubashevsky},
+           familyi={L\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=75b40637314047a3ad80d8dab04d781d}{%
+           family={Schank},
+           familyi={S\bibinitperiod},
+           given={J.M.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a7fa2680a50095cbf0624792c197f587}{%
+           family={Schwabe},
+           familyi={S\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=59032c5de31b31fe02a7615bff4413cf}{%
+           family={Seiler},
+           familyi={S\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=8d8b8b1106726b88678ab7ac47b03271}{%
+           family={Stehle},
+           familyi={S\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{9e0fec528d32b633d2bfbac5047c77df}
+      \strng{fullhash}{fc95914d695c4e755a7c3828c824480b}
+      \strng{fullhashraw}{fc95914d695c4e755a7c3828c824480b}
+      \strng{bibnamehash}{9e0fec528d32b633d2bfbac5047c77df}
+      \strng{authorbibnamehash}{9e0fec528d32b633d2bfbac5047c77df}
+      \strng{authornamehash}{9e0fec528d32b633d2bfbac5047c77df}
+      \strng{authorfullhash}{fc95914d695c4e755a7c3828c824480b}
+      \strng{authorfullhashraw}{fc95914d695c4e755a7c3828c824480b}
+      \field{extraname}{1}
+      \field{labelalpha}{Ava+24}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extraalpha}{1}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{NIST FIPS 204}
+      \field{title}{Module-Lattice-Based Digital Signature Standard}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://csrc.nist.gov/pubs/fips/204/final
+      \endverb
+      \verb{url}
+      \verb https://csrc.nist.gov/pubs/fips/204/final
+      \endverb
+    \endentry
+    \entry{mlkem}{misc}{}{}
+      \name{author}{12}{}{%
+        {{hash=381bada1fa44d20154d82a788713ac81}{%
+           family={Avanzi},
+           familyi={A\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=ad80583dc48a655562df850af8203959}{%
+           family={Bai},
+           familyi={B\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e59cfbb46dda4843021339ea939520e9}{%
+           family={Bos},
+           familyi={B\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=8af70f080770a6d6bc38f881e402dd52}{%
+           family={Ding},
+           familyi={D\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=8bfab5ef264630c92971259caadcaff1}{%
+           family={Ducas},
+           familyi={D\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=67d88b70617cce9b680ad5c695876179}{%
+           family={Kiltz},
+           familyi={K\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=707dcc39dee1cf44bf8166ff5f296ac2}{%
+           family={Lepoint},
+           familyi={L\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=b1519ad441b82d6cf85ef903371adb15}{%
+           family={Lyubashevsky},
+           familyi={L\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=75b40637314047a3ad80d8dab04d781d}{%
+           family={Schank},
+           familyi={S\bibinitperiod},
+           given={J.M.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a7fa2680a50095cbf0624792c197f587}{%
+           family={Schwabe},
+           familyi={S\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=59032c5de31b31fe02a7615bff4413cf}{%
+           family={Seiler},
+           familyi={S\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=8d8b8b1106726b88678ab7ac47b03271}{%
+           family={Stehle},
+           familyi={S\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{9e0fec528d32b633d2bfbac5047c77df}
+      \strng{fullhash}{fc95914d695c4e755a7c3828c824480b}
+      \strng{fullhashraw}{fc95914d695c4e755a7c3828c824480b}
+      \strng{bibnamehash}{9e0fec528d32b633d2bfbac5047c77df}
+      \strng{authorbibnamehash}{9e0fec528d32b633d2bfbac5047c77df}
+      \strng{authornamehash}{9e0fec528d32b633d2bfbac5047c77df}
+      \strng{authorfullhash}{fc95914d695c4e755a7c3828c824480b}
+      \strng{authorfullhashraw}{fc95914d695c4e755a7c3828c824480b}
+      \field{extraname}{2}
+      \field{labelalpha}{Ava+24}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extraalpha}{2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{NIST FIPS 203}
+      \field{title}{Module-Lattice-Based Key-Encapsulation Mechanism Standard}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://csrc.nist.gov/pubs/fips/203/final
+      \endverb
+      \verb{url}
+      \verb https://csrc.nist.gov/pubs/fips/203/final
+      \endverb
+    \endentry
+    \entry{ntruprime}{misc}{}{}
+      \name{author}{10}{}{%
+        {{hash=dc73c639dc3d308a970c4845085f1c6a}{%
+           family={Bernstein},
+           familyi={B\bibinitperiod},
+           given={D.J.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=229c3adfb64ddd9583418e8e08a42d48}{%
+           family={Brumley},
+           familyi={B\bibinitperiod},
+           given={B.B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=83d5c1c7259b3dea3bd140d25354e416}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={M.S.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=51e8ecfcc2e1fe2e525c1f7d8fac21ac}{%
+           family={Chuengsatiansup},
+           familyi={C\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=0b6fa0222faac95cc038f0cd9e2a7f20}{%
+           family={Lange},
+           familyi={L\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=633f656c89028b893466d3f1f9eae428}{%
+           family={Marotzke},
+           familyi={M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a20cbe193b14471549f3a0194cae2577}{%
+           family={Peng},
+           familyi={P\bibinitperiod},
+           given={B.Y.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=804d3aa59186a3959b7237d09ecbe34b}{%
+           family={Tuveri},
+           familyi={T\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=37e48cdd06895632f1583d9ee378d2a6}{%
+           family={Vredendaal},
+           familyi={V\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=c3098c12005bf02f5ec592516619b460}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={B.Y.},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{3491e3d44b4539b2577d889e52ca5ce4}
+      \strng{fullhash}{166d0ea94454c2fe2c0bf914c3402413}
+      \strng{fullhashraw}{166d0ea94454c2fe2c0bf914c3402413}
+      \strng{bibnamehash}{3491e3d44b4539b2577d889e52ca5ce4}
+      \strng{authorbibnamehash}{3491e3d44b4539b2577d889e52ca5ce4}
+      \strng{authornamehash}{3491e3d44b4539b2577d889e52ca5ce4}
+      \strng{authorfullhash}{166d0ea94454c2fe2c0bf914c3402413}
+      \strng{authorfullhashraw}{166d0ea94454c2fe2c0bf914c3402413}
+      \field{labelalpha}{Ber+}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed 1 January 2025}
+      \field{title}{{NTRU Prime}}
+      \verb{urlraw}
+      \verb https://ntruprime.cr.yp.to
+      \endverb
+      \verb{url}
+      \verb https://ntruprime.cr.yp.to
+      \endverb
+    \endentry
+    \entry{nsm10}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=8f3fdb0b2b06704be49a52c3e77d6c2f}{%
+           family={Biden},
+           familyi={B\bibinitperiod},
+           given={J},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{8f3fdb0b2b06704be49a52c3e77d6c2f}
+      \strng{fullhash}{8f3fdb0b2b06704be49a52c3e77d6c2f}
+      \strng{fullhashraw}{8f3fdb0b2b06704be49a52c3e77d6c2f}
+      \strng{bibnamehash}{8f3fdb0b2b06704be49a52c3e77d6c2f}
+      \strng{authorbibnamehash}{8f3fdb0b2b06704be49a52c3e77d6c2f}
+      \strng{authornamehash}{8f3fdb0b2b06704be49a52c3e77d6c2f}
+      \strng{authorfullhash}{8f3fdb0b2b06704be49a52c3e77d6c2f}
+      \strng{authorfullhashraw}{8f3fdb0b2b06704be49a52c3e77d6c2f}
+      \field{labelalpha}{Bid22}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{National Security Memorandum 10}
+      \field{title}{National Security Memorandum on Promoting United States Leadership in Quantum Computing While Mitigating Risks to Vulnerable Cryptographic Systems}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2022/05/04/national-security-memorandum-on-promoting-united-states-leadership-in-quantum-computing-while-mitigating-risks-to-vulnerable-cryptographic-systems/
+      \endverb
+      \verb{url}
+      \verb https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2022/05/04/national-security-memorandum-on-promoting-united-states-leadership-in-quantum-computing-while-mitigating-risks-to-vulnerable-cryptographic-systems/
+      \endverb
+    \endentry
+    \entry{hawk}{misc}{}{}
+      \name{author}{4}{}{%
+        {{hash=8bfab5ef264630c92971259caadcaff1}{%
+           family={Ducas},
+           familyi={D\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=59c0f9f6b295829eb0340ac326e37498}{%
+           family={Postlethwaite},
+           familyi={P\bibinitperiod},
+           given={E.W.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=7ec4fd6be94887eb38ed1c193125ec67}{%
+           family={Pulles},
+           familyi={P\bibinitperiod},
+           given={L.N.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=d9fbca36078e71d0996d272833f5514e}{%
+           family={Woerden},
+           familyi={W\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+      }
+      \strng{namehash}{4ae2948948ec8678d1356b18a75d1cf6}
+      \strng{fullhash}{cfe0400fdb2e84a6f49ecaaf4317a653}
+      \strng{fullhashraw}{cfe0400fdb2e84a6f49ecaaf4317a653}
+      \strng{bibnamehash}{4ae2948948ec8678d1356b18a75d1cf6}
+      \strng{authorbibnamehash}{4ae2948948ec8678d1356b18a75d1cf6}
+      \strng{authornamehash}{4ae2948948ec8678d1356b18a75d1cf6}
+      \strng{authorfullhash}{cfe0400fdb2e84a6f49ecaaf4317a653}
+      \strng{authorfullhashraw}{cfe0400fdb2e84a6f49ecaaf4317a653}
+      \field{labelalpha}{Duc+22}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Cryptology ePrint Archive, Paper 2022/1155}
+      \field{title}{{HAWK}: Module {LIP} makes Lattice Signatures Fast, Compact and Simple}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://eprint.iacr.org/2022/1155
+      \endverb
+      \verb{url}
+      \verb https://eprint.iacr.org/2022/1155
+      \endverb
+    \endentry
+    \entry{falcon}{inproceedings}{}{}
+      \name{author}{10}{}{%
+        {{hash=24e76aabbca95eae6dc7513ce456e796}{%
+           family={Fouque},
+           familyi={F\bibinitperiod},
+           given={P.A.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=af95eda034e9de755361061b28b29281}{%
+           family={Hoffstein},
+           familyi={H\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=0be8e8b651a2721dd70e2dc6f632e466}{%
+           family={Kirchner},
+           familyi={K\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=b1519ad441b82d6cf85ef903371adb15}{%
+           family={Lyubashevsky},
+           familyi={L\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=9c757feac8cd5e2f015c5e9c559c057e}{%
+           family={Pornin},
+           familyi={P\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=6ca986e6c6842be330647bbaa8d490ef}{%
+           family={Prest},
+           familyi={P\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=b9902acc7b4603e68be87cf34812380d}{%
+           family={Ricosset},
+           familyi={R\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=59032c5de31b31fe02a7615bff4413cf}{%
+           family={Seiler},
+           familyi={S\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=5d5c21b62e64c3899742caaf6c4577f2}{%
+           family={Whyte},
+           familyi={W\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=5ee5d3d5470ac29a2e7c8df70ed54725}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Z.},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{9eb595b89b47694908c6185d72adadcd}
+      \strng{fullhash}{2cd973af2bd4417951557d55f4d4a691}
+      \strng{fullhashraw}{2cd973af2bd4417951557d55f4d4a691}
+      \strng{bibnamehash}{9eb595b89b47694908c6185d72adadcd}
+      \strng{authorbibnamehash}{9eb595b89b47694908c6185d72adadcd}
+      \strng{authornamehash}{9eb595b89b47694908c6185d72adadcd}
+      \strng{authorfullhash}{2cd973af2bd4417951557d55f4d4a691}
+      \strng{authorfullhashraw}{2cd973af2bd4417951557d55f4d4a691}
+      \field{labelalpha}{Fou+20}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Falcon: Fast-Fourier Lattice-base Compact Signatures over NTRU}}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://falcon-sign.info/falcon.pdf
+      \endverb
+      \verb{url}
+      \verb https://falcon-sign.info/falcon.pdf
+      \endverb
+    \endentry
+    \entry{classical}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=b50740313a41416c421e8004cf5de83a}{%
+           family={Howgrave-Graham},
+           familyi={H\bibinithyphendelim G\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=92a7e2b77bf3dab483ab23642c8736e8}{%
+           family={Smart},
+           familyi={S\bibinitperiod},
+           given={N.P.},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{7ca4d7104664db78d98cede6eac0373b}
+      \strng{fullhash}{7ca4d7104664db78d98cede6eac0373b}
+      \strng{fullhashraw}{7ca4d7104664db78d98cede6eac0373b}
+      \strng{bibnamehash}{7ca4d7104664db78d98cede6eac0373b}
+      \strng{authorbibnamehash}{7ca4d7104664db78d98cede6eac0373b}
+      \strng{authornamehash}{7ca4d7104664db78d98cede6eac0373b}
+      \strng{authorfullhash}{7ca4d7104664db78d98cede6eac0373b}
+      \strng{authorfullhashraw}{7ca4d7104664db78d98cede6eac0373b}
+      \field{labelalpha}{HS01}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Designs, Codes and Cryptography, 23, 283-290}
+      \field{title}{Lattice Attacks on Digital Signature Schemes}
+      \field{year}{2001}
+      \verb{urlraw}
+      \verb https://link.springer.com/article/10.1023/A:1011214926272
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/article/10.1023/A:1011214926272
+      \endverb
+    \endentry
+    \entry{nistsig}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=ef9cb61878e61d434507444346b29d1a}{%
+           family={{National Institute of Standards and Technology}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{ef9cb61878e61d434507444346b29d1a}
+      \strng{fullhash}{ef9cb61878e61d434507444346b29d1a}
+      \strng{fullhashraw}{ef9cb61878e61d434507444346b29d1a}
+      \strng{bibnamehash}{ef9cb61878e61d434507444346b29d1a}
+      \strng{authorbibnamehash}{ef9cb61878e61d434507444346b29d1a}
+      \strng{authornamehash}{ef9cb61878e61d434507444346b29d1a}
+      \strng{authorfullhash}{ef9cb61878e61d434507444346b29d1a}
+      \strng{authorfullhashraw}{ef9cb61878e61d434507444346b29d1a}
+      \field{labelalpha}{Nat24}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2024-12-20}
+      \field{title}{Post-Quantum Cryptography Digital Signature Round 1 Additional Signatures}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://csrc.nist.gov/projects/pqc-dig-sig/round-1-additional-signatures
+      \endverb
+      \verb{url}
+      \verb https://csrc.nist.gov/projects/pqc-dig-sig/round-1-additional-signatures
+      \endverb
+    \endentry
+    \entry{shor}{inproceedings}{}{}
+      \name{author}{1}{}{%
+        {{hash=a24fb60f0ae3752c34144e38865ecca9}{%
+           family={Shor},
+           familyi={S\bibinitperiod},
+           given={P.W.},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{a24fb60f0ae3752c34144e38865ecca9}
+      \strng{fullhash}{a24fb60f0ae3752c34144e38865ecca9}
+      \strng{fullhashraw}{a24fb60f0ae3752c34144e38865ecca9}
+      \strng{bibnamehash}{a24fb60f0ae3752c34144e38865ecca9}
+      \strng{authorbibnamehash}{a24fb60f0ae3752c34144e38865ecca9}
+      \strng{authornamehash}{a24fb60f0ae3752c34144e38865ecca9}
+      \strng{authorfullhash}{a24fb60f0ae3752c34144e38865ecca9}
+      \strng{authorfullhashraw}{a24fb60f0ae3752c34144e38865ecca9}
+      \field{labelalpha}{Sho94}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings 35th Annual Symposium on Foundations of Computer Science}
+      \field{title}{Algorithms for quantum computation: discrete logarithms and factoring}
+      \field{year}{1994}
+      \field{pages}{124\bibrangedash 134}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1109/SFCS.1994.365700
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

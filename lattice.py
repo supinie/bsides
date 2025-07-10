@@ -25,29 +25,10 @@ def plotLattice(ax, basis_vectors, ldown, rup, color, linewidth, alpha):
     b1, b2 = np.array(basis_vectors[0]), np.array(basis_vectors[1])
     # list to hold the lattice points
     points = []
-    
-    # upper bounds for the for loops
-    xmax, ymax = 0, 0
-    if b1[0] == 0:
-        xmax = np.floor(rup[0] / abs(b2[0]))
-    elif b2[0] == 0:
-        xmax = np.floor(rup[0] / abs(b1[0]))
-    else:
-        xmax = np.floor(rup[0] / min(abs(b1[0]),abs(b2[0])))
-    
-    if b1[1] == 0:
-        ymax = np.floor(rup[1] / abs(b2[1]))
-    elif b2[1] == 0:
-        ymax = np.floor(rup[1] / abs(b1[1]))
-    else:
-        ymax = np.floor(rup[1] / min(abs(b1[1]),abs(b2[1])))
-    
-    # increase the bounds by 1
-    xmax = int(xmax) + 50
-    ymax = int(ymax) + 50
-    
-    # get the lower bounds for the for loops
-    xmin, ymin = -int(xmax), -int(ymax)
+    search_radius = 30  # number of steps in each direction of i and j
+
+    xmin, xmax = -search_radius, search_radius
+    ymin, ymax = -search_radius, search_radius
     
     for i in range(xmin, int(xmax)):
         for j in range(ymin, int(ymax)):
@@ -55,12 +36,12 @@ def plotLattice(ax, basis_vectors, ldown, rup, color, linewidth, alpha):
             p = i * b1 + j * b2
             # if the point is within the plotting area, plot it and add the point to the list
             if ldown[0] <= p[0] <= rup[0] and ldown[1] <= p[1] <= rup[1]:
-                ax.scatter(p[0], p[1], color='gray', linewidths=5, alpha=1)
+                ax.scatter(p[0], p[1], color='gray', linewidths=5, alpha=alpha)
                 points.append(p)
 
     # plot basis vectors
-    # ax.quiver(0, 0, b1[0], b1[1], color='red', scale_units='xy', scale=1, alpha=1)
-    # ax.quiver(0, 0, b2[0], b2[1], color='blue', scale_units='xy', scale=1, alpha=1)
+    ax.quiver(0, 0, b1[0], b1[1], color='red', scale_units='xy', scale=1, alpha=0.25)
+    ax.quiver(0, 0, b2[0], b2[1], color='blue', scale_units='xy', scale=1, alpha=0.25)
     # ax.quiver(0, 0, b2[0] + b1[0], b2[1] + b1[1], color='red', scale_units='xy', scale=1, alpha=1)
     # ax.quiver(0, 0, 2 * b2[0] + b1[0], 2 * b2[1] + b1[1], color='blue', scale_units='xy', scale=1, alpha=1)
 
@@ -68,76 +49,98 @@ def plotLattice(ax, basis_vectors, ldown, rup, color, linewidth, alpha):
     return points
 
 
-def plotParallelepipeds(ax, bad_basis_vectors, points, color, linewidth, alpha):
+def plotParallelepipeds(ax, bad_basis_vectors, points, color, linewidth, alpha, target, e):
     b1, b2 = np.array(bad_basis_vectors[0]), np.array(bad_basis_vectors[1])
-    ax.quiver(0, 0, b1[0], b1[1], color='red', scale_units='xy', scale=1, alpha=1)
-    ax.quiver(0, 0, b2[0], b2[1], color='blue', scale_units='xy', scale=1, alpha=1)
+    # ax.quiver(0, 0, b1[0], b1[1], color='red', scale_units='xy', scale=1, alpha=1)
+    # ax.quiver(0, 0, b2[0], b2[1], color='blue', scale_units='xy', scale=1, alpha=1)
 
     # Example new vectors (replace with your actual new vectors)
-    new_vec1 = np.array([3, -1])
-    new_vec2 = np.array([2, 3])
+    # new_vec1 = np.array([3, -1])
+    # new_vec2 = np.array([2, 3])
 
     # Find lengths of the original vectors
-    length_b1 = np.linalg.norm(b1)
-    length_b2 = np.linalg.norm(b2)
+    # length_b1 = np.linalg.norm(b1)
+    # length_b2 = np.linalg.norm(b2)
 
     # Normalize the new vectors (scale them to unit length)
-    new_vec1_normalized = new_vec1 / np.linalg.norm(new_vec1)
-    new_vec2_normalized = new_vec2 / np.linalg.norm(new_vec2)
+    # new_vec1_normalized = new_vec1 / np.linalg.norm(new_vec1)
+    # new_vec2_normalized = new_vec2 / np.linalg.norm(new_vec2)
 
     # Scale the new vectors to have the same length as b1 and b2
-    new_vec1_scaled = new_vec1_normalized * length_b1
-    new_vec2_scaled = new_vec2_normalized * length_b2
-    ax.quiver(0, 0, new_vec1_scaled[0], new_vec1_scaled[1], color='red', scale_units='xy', scale=1, alpha=0.25)
-    ax.quiver(0, 0, new_vec2_scaled[0], new_vec2_scaled[1], color='blue', scale_units='xy', scale=1, alpha=0.25)
-    ax.quiver(0, 0, new_vec1[0], new_vec1[1], color='red', scale_units='xy', scale=1, alpha=0.25)
-    ax.quiver(0, 0, new_vec2[0], new_vec2[1], color='blue', scale_units='xy', scale=1, alpha=0.25)
-    # e = [-0.506185, -0.99403]
-    # ax.scatter(6 - e[0], 7 - e[1], color='green', linewidths=5, alpha=1)
-    # ax.scatter(6, 7, color='red', linewidths=5, alpha=1)
-    # for p in points:
-    #     # Calculate the center offset
-    #     center_offset = (b1 + b2) / 2
-    #     # Define vertices for the parallelepiped centered on the lattice point
-    #     vertices = [p - center_offset, p - center_offset + b1, p - center_offset + b1 + b2, p - center_offset + b2]
-    #     path = Path(vertices)
-    #     if path.contains_point(np.array([6 - e[0], 7 - e[1]])):
-    #         fill_color = 'yellow'
-    #         fill_alpha = 0.3
-    #     else:
-    #         fill_color = 'none'
-    #         fill_alpha = 0.3
-    #     parallelepiped = patches.Polygon(vertices, closed=True, fill=True, edgecolor=color, linewidth=linewidth, alpha=fill_alpha, facecolor=fill_color)
-    #     ax.add_patch(parallelepiped)
+    # new_vec1_scaled = new_vec1_normalized * length_b1
+    # new_vec2_scaled = new_vec2_normalized * length_b2
+    # ax.quiver(0, 0, new_vec1_scaled[0], new_vec1_scaled[1], color='red', scale_units='xy', scale=1, alpha=0.25)
+    # ax.quiver(0, 0, new_vec2_scaled[0], new_vec2_scaled[1], color='blue', scale_units='xy', scale=1, alpha=0.25)
+    # ax.quiver(0, 0, new_vec1[0], new_vec1[1], color='red', scale_units='xy', scale=1, alpha=0.25)
+    # ax.quiver(0, 0, new_vec2[0], new_vec2[1], color='blue', scale_units='xy', scale=1, alpha=0.25)
+    ax.scatter(target[0] - e[0], target[1] - e[1], color='green', linewidths=5, alpha=1)
+    ax.scatter(target[0], target[1], color='red', linewidths=5, alpha=1)
+    for p in points:
+        # Calculate the center offset
+        center_offset = (b1 + b2) / 2
+        # Define vertices for the parallelepiped centered on the lattice point
+        vertices = [p - center_offset, p - center_offset + b1, p - center_offset + b1 + b2, p - center_offset + b2]
+        path = Path(vertices)
+        if path.contains_point(np.array([target[0] - e[0], target[1] - e[1]])):
+            fill_color = 'yellow'
+            fill_alpha = 0.3
+        else:
+            fill_color = 'none'
+            fill_alpha = 0.3
+        parallelepiped = patches.Polygon(vertices, closed=True, fill=True, edgecolor=color, linewidth=linewidth, alpha=fill_alpha, facecolor=fill_color)
+        ax.add_patch(parallelepiped)
 
 
 if __name__ == '__main__':
     
     # Define original basis
-    b1 = np.array([-3.18068, -2.83395])
-    b2 = np.array([2.6236, -4.57916])
+    b1 = np.array([1, 0])
+    b2 = np.array([0.5, np.sqrt(3)/2])
     basis_vectors = [b1, b2]
 
     # Define a "bad" basis
-    bad_b1 = np.array([5, 4])
-    bad_b2 = np.array([9, 5])
+    bad_b1 = np.array([5/2, np.sqrt(3)/2])
+    bad_b2 = np.array([2, np.sqrt(3)])
     bad_basis_vectors = [bad_b1, bad_b2]
 
+    bad_voronoi = [bad_b2, b2]
+
     # define the plotting area
-    ldown = np.array([-12.8, -12.8])
-    rup = np.array([12.8, 12.8])
+    ldown = np.array([-3, -3])
+    rup = np.array([3, 3])
+
+    theta = np.radians(95)  # 45 degree rotation
+    rotation_matrix = np.array([
+        [np.cos(theta), -np.sin(theta)],
+        [np.sin(theta),  np.cos(theta)]
+    ])
+
+
+    # Rotate both basis vectors
+    rotated_b1 = rotation_matrix @ b1
+    rotated_b2 = rotation_matrix @ b2
+    rotated_basis_vectors = [rotated_b1, rotated_b2]
+
+    target_point = np.array([-3/2, np.sqrt(3)/2])
+    e = [-0.25, 0.13]
+    rotated_target_point = rotation_matrix @ target_point
+    rot_e = rotation_matrix @ e
+
+    bad_rot_1 = rotation_matrix @ bad_b1
+    bad_rot_2 = rotation_matrix @ bad_b2
+    bad_rot_voronoi = [bad_rot_2, rotated_b2]
 
     fig, ax = plt.subplots()
-    points = plotLattice(ax, basis_vectors, ldown, rup, 'blue', 3, 0.25)
-    plotParallelepipeds(ax, basis_vectors, points, 'green', 1, 0.25)
+    points = plotLattice(ax, rotated_basis_vectors, ldown, rup, 'blue', 3, 1)
+    # plotParallelepipeds(ax, bad_rot_voronoi, points, 'green', 1, 0.25, rotated_target_point, rot_e)
 
     # resize the plotting window
     mngr = plt.get_current_fig_manager()
-    mngr.resize(960, 1080)
+    # mngr.resize(960, 1080)
     
     # tune axis
     ax.set_aspect('equal')
-    ax.grid(True, which='both')
+    ax.grid(False)
     ax.set_xlim(ldown[0], rup[0])
     ax.set_ylim(ldown[1], rup[1])
 
@@ -147,5 +150,9 @@ if __name__ == '__main__':
     ax.spines['bottom'].set_color('none')
     ax.spines['left'].set_color('none')
     ax.tick_params(left=False, bottom=False, labelleft=False, labelbottom=False)    
+    # ax.scatter(rotated_target_point[0] - e[0], rotated_target_point[1] - e[1], color='green', linewidths=5, alpha=0.25)
+    # ax.scatter(rotated_target_point[0], rotated_target_point[1], color='red', linewidths=5, alpha=0.25)
+    ax.quiver(0, 0, bad_rot_1[0], bad_rot_1[1], color='red', scale_units='xy', scale=1, alpha=1)
+    ax.quiver(0, 0, bad_rot_2[0], bad_rot_2[1], color='blue', scale_units='xy', scale=1, alpha=1)
     # show the plot
     plt.show()

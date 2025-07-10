@@ -122,7 +122,6 @@ onlytextwidth, % Typeset content in columns at text width
             \textbf{06}\tabto{0.125\linewidth} Some you may have heard of\\
             \textbf{07}\tabto{0.125\linewidth} Where next?\\
             \textbf{08}\tabto{0.125\linewidth} Further reading
-
         \end{column}
     \end{columns}
 \end{frame}
@@ -180,30 +179,66 @@ onlytextwidth, % Typeset content in columns at text width
 
 \begin{frame}
     \frametitle{What is a lattice?}
+    \begin{columns}[T]
+        \begin{column}{0.48\linewidth}
+            \begin{center}
+            \begin{tcolorbox}[colback=ICLBlue!5!white,colframe=ICLBlue,title=\textbf{Definition:} Lattice]
+                The set of all linear integer combinations of basis vectors,
+                \[
+                    \mathcal{L} = \{ \sum_{i = 1}^{d}\mathbf{b}_i\mathbf{x} \ | \ \mathbf{x} \in \mathbb{Z}^d \}
+                \]
+            \end{tcolorbox}
 
-    \begin{adjustwidth}{0cm}{0cm} % The first parameter is the left margin indentation and the second is the right margin indentation
-
-        \begin{tcolorbox}[colback=ICLBlue!5!white,colframe=ICLBlue,title=\textbf{Definition:} Lattice]
-            The set of all linear integer combinations of basis vectors,
             \[
-                \mathcal{L} = \{ \sum_{i = 1}^{d}\mathbf{b}_i\mathbf{x} \ | \ \mathbf{x} \in \mathbb{Z}^d \}
+                \mathbf{B} = \begin{pmatrix}
+                    \color{red}1 & \color{blue}\frac{1}{2}\\
+                    \color{red}0 & \color{blue}\frac{\sqrt{3}}{2}
+                \end{pmatrix}
             \]
-        \end{tcolorbox}
-
-        \vspace{-0.5em}
-        \begin{columns}[T] % [T] ensures correct vertical alignment
-            \begin{column}{0.3\linewidth} % Left column
-                \includegraphics[width=\linewidth]{zn_trivial_basis.jpeg}
-            \end{column}
-            \begin{column}{0.3\linewidth} % Center column
-                \includegraphics[width=\linewidth]{zn_nontrivial_basis.jpeg}
-            \end{column}
-            \begin{column}{0.3\linewidth} % Right column
-                \includegraphics[width=\linewidth]{Figure_1.jpeg}
-            \end{column}
-        \end{columns}
-    \end{adjustwidth}
+            \end{center}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \includegraphics[width=\linewidth]{a2_good_basis.png}
+        \end{column}
+    \end{columns}
 \end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+    \frametitle{What is a lattice?}
+    \begin{columns}[T]
+        \begin{column}{0.48\linewidth}
+            \begin{center}
+            \begin{tcolorbox}[colback=ICLBlue!5!white,colframe=ICLBlue,title=\textbf{Definition:} Lattice]
+                The set of all linear integer combinations of basis vectors,
+                \[
+                    \mathcal{L} = \{ \sum_{i = 1}^{d}\mathbf{b}_i\mathbf{x} \ | \ \mathbf{x} \in \mathbb{Z}^d \}
+                \]
+            \end{tcolorbox}
+
+            \[
+                \mathbf{B'} = \begin{pmatrix}
+                    \color{red}\frac{5}{2} & \color{blue}2\\
+                    \color{red}\frac{\sqrt{3}}{2} & \color{blue}\sqrt{3}
+                \end{pmatrix}
+            \]
+            \end{center}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \includegraphics[width=\linewidth]{a2_bad_basis.png}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%------------------------------------------------
+
+% \begin{frame}
+%     \frametitle{What is a lattice?}
+%     \begin{columns}[T]
+%         \begin{column}{0.35\linewidth}
+
+% \end{frame}
 
 %------------------------------------------------
 
@@ -227,20 +262,6 @@ onlytextwidth, % Typeset content in columns at text width
         But we also have the Short Integer Solutions problem (SIS), the NTRU problem, the Closest Vector Problem (CVP), and all the many variants of anything mentioned here!
 
     \end{adjustwidth}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-    \frametitle{Shortest/Closest Vector Problem}
-    \begin{columns}[T] % [T] ensures correct vertical alignment
-        \begin{column}{0.48\linewidth} % Left column
-            \includegraphics[width=\linewidth]{good_basis_svp.jpeg} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
-        \end{column}
-        \begin{column}{0.48\linewidth} % Right column
-            \includegraphics[width=\linewidth]{bad_basis_svp.jpeg} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
-        \end{column}
-    \end{columns}
 \end{frame}
 
 %------------------------------------------------
