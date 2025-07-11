@@ -49,9 +49,9 @@ onlytextwidth, % Typeset content in columns at text width
 %	PRESENTATION INFORMATION
 %----------------------------------------------------------------------------------------
 
-\title{On the subject of lattices} % Presentation title to appear on the title slide and left footers
+\title{A Crash Course on Lattices} % Presentation title to appear on the title slide and left footers
 
-\subtitle{and why cryptographers love them} % Presentation subtitle to appear on the title slide
+\subtitle{and how they're building the future of cryptography} % Presentation subtitle to appear on the title slide
 
 \author{Joshua Limbrey} % Author name(s) to appear on the title slide
 
@@ -116,12 +116,12 @@ onlytextwidth, % Typeset content in columns at text width
         \begin{column}{0.48\linewidth} % Right column
             \textbf{01}\tabto{0.125\linewidth} What is currently used for cryptography?\\ % Use \tabto{<length>} to add a fixed horizontal whitespace
             \textbf{02}\tabto{0.125\linewidth} What is a lattice?\\
-            \textbf{03}\tabto{0.125\linewidth} What are these ``hard lattice problems'?'\\
-            \textbf{04}\tabto{0.125\linewidth} What can we do with them?\\
-            \textbf{05}\tabto{0.125\linewidth} How we create post quantum schemes?\\
-            \textbf{06}\tabto{0.125\linewidth} Some you may have heard of\\
-            \textbf{07}\tabto{0.125\linewidth} Where next?\\
-            \textbf{08}\tabto{0.125\linewidth} Further reading
+            \textbf{03}\tabto{0.125\linewidth} What are these ``hard lattice problems''?\\
+            \textbf{   }\tabto{0.25\linewidth} Closest Vector Problem\\
+            \textbf{   }\tabto{0.25\linewidth} Learning with Errors\\
+            \textbf{   }\tabto{0.25\linewidth} Lattice Isomorphism Problem\\
+            \textbf{04}\tabto{0.125\linewidth} The PQC Timeline\\
+            \textbf{05}\tabto{0.125\linewidth} Further reading
         \end{column}
     \end{columns}
 \end{frame}
@@ -375,7 +375,7 @@ onlytextwidth, % Typeset content in columns at text width
 
             With a good basis for our lattice, something that can be kept secret, solving CVP and recovering the secret is easy, however.
 
-            In practice, we have methods of turning a bad basis into a good basis (\textit{lattice reduction}), but these algorithms do not scale well for high dimension lattices.
+            One of the key parts of proving the security of LWE is that the vector \(\mathbf{b}\) is indistinguishable from a random vector.
         \end{column}
         \begin{column}{0.48\linewidth} % Right column
             \includegraphics[width=\linewidth]{lwe_lattice_solved.png} % Trimming is used to crop your image and the order of dimensions is: left, bottom, right, top. It's recommended to crop outside of LaTeX though, to ensure the aspect ratio remains the same.
@@ -593,29 +593,28 @@ onlytextwidth, % Typeset content in columns at text width
 
 \begin{frame}
     \frametitle{Further reading}
-    \begin{adjustwidth}{0cm}{0.15\textwidth} % The first parameter is the left margin indentation and the second is the right margin indentation
-        \begin{columns}[T] % [T] ensures correct vertical alignment
-            \begin{column}{0.3\linewidth} % Right column
-                \centering{\textbf{General\\Cryptography:}}
-                \includegraphics[width=\linewidth]{general.png}
-            \end{column}
-            \begin{column}{0.3\linewidth} % Left column
-                \centering{\textbf{Lattices and\\Lattice Cryptography:}}
-                \includegraphics[width=\linewidth]{lattices_resources.png}
-            \end{column}
-            \begin{column}{0.3\linewidth} % Center column
-                % \centering{\textbf{PQC Implementations:\newline}}
-
-                % \vspace{-0.75em}
-                \centering{\textbf{PQC\\Implementations:}}
-                \includegraphics[width=\linewidth]{implementation.png}
-            \end{column}
-            \begin{column}{0.3\linewidth} % Right column
-                \centering{\textbf{Policy, Migration,\\and Standardisation:}}
-                \includegraphics[width=\linewidth]{policy.png}
-            \end{column}
-        \end{columns}
-    \end{adjustwidth}
+    \begin{columns}[T] % [T] ensures correct vertical alignment
+        \begin{column}{0.25\linewidth} % Right column
+            \centering{\textbf{General\\Cryptography:}}
+            \includegraphics[width=\linewidth]{general.png}
+        \end{column}
+        \begin{column}{0.25\linewidth} % Left column
+            \centering{\textbf{Lattices and\\Lattice Cryptography:}}
+            \includegraphics[width=\linewidth]{lattices_resources.png}
+        \end{column}
+        \begin{column}{0.25\linewidth} % Center column
+            \centering{\textbf{PQC\\Implementations:}}
+            \includegraphics[width=\linewidth]{implementation.png}
+        \end{column}
+        \begin{column}{0.25\linewidth} % Right column
+            \centering{\textbf{Policy, Migration,\\and Standardisation:}}
+            \includegraphics[width=\linewidth]{policy.png}
+        \end{column}
+    \end{columns}
+    
+    \begin{center}
+        Any other questions please feel free to come talk to me, or email: j.limbrey24@imperial.ac.uk
+    \end{center}
 \end{frame}
 %----------------------------------------------------------------------------------------
 %	CLOSING SLIDES
