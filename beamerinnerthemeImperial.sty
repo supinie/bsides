@@ -53,12 +53,22 @@
 	
 	\vfill\vfill\vfill % Automatic vertical whitespace
 	
-	\begin{beamercolorbox}[wd=\textwidth]{author}
-		\usebeamerfont{author}\insertauthor\par % Author(s)
-	\end{beamercolorbox}
-	\begin{beamercolorbox}[wd=\textwidth]{date}
-		\usebeamerfont{date}\insertdate\par % Date
-	\end{beamercolorbox}
+    \begin{minipage}[t]{\textwidth}
+        \begin{minipage}[b]{0.7\textwidth}
+            \begin{beamercolorbox}[wd=\textwidth]{author}
+                \usebeamerfont{author}\insertauthor\par
+            \end{beamercolorbox}
+            \begin{beamercolorbox}[wd=\textwidth]{date}
+                \usebeamerfont{date}\insertdate\par
+            \end{beamercolorbox}
+        \end{minipage}%
+        \hfill
+        \begin{minipage}[b]{0.25\textwidth}
+            \raggedleft
+            \includegraphics[width=3cm]{Images/bsides_inv.png}
+        \end{minipage}
+    \end{minipage}
+
 	
 	\expandafter\ifstrequal\expandafter{\insertaspectratio}{43}{ % 4:3 aspect ratio
 		\vspace{3mm} % Vertical whitespace (bottom margin)
